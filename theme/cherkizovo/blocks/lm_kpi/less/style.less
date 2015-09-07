@@ -1,0 +1,100 @@
+/** ВИДЖЕТ **/
+
+.block_lm_kpi .content {
+  margin-bottom: -15px;
+}
+
+
+/*.block_lm_kpi .metric-chart {
+  margin: 5px 2px;
+}*/
+.block_lm_kpi .kpi-wrapper{
+  text-align: justify;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.block_lm_kpi .kpi-container{
+  display: block;
+  float: left;
+  margin: 0 12px 5px;
+}
+
+@media (min-width: 768px) {
+  .metrics-list{
+    margin:30px auto;
+    width: 600px;
+  }
+  .metrics-list .metric-container:nth-child(1){
+    margin-left: 35px;
+
+  }
+  .metrics-list .metric-container:nth-child(4){
+    margin-left: 135px;
+
+  }
+
+}
+
+@media (min-width: 960px) {
+  .metrics-list{
+    width: 900px;
+  }
+  .metrics-list .metric-container:nth-child(1){
+    margin-left: 0;
+
+  }
+  .metrics-list .metric-container:nth-child(4){
+    margin-left: 0;
+
+  }
+}
+
+
+@media (min-width: 1200px) {
+  .block_lm_kpi .content img {
+    width: auto;
+    height: 150px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .metric-info {
+    margin: 20px 10px;
+  }
+
+  .metric-history-chart {
+    float: right;
+    margin: 20px 0;
+  }
+  .metric-details .metric-chart{
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 1280px) {
+  .metric-history-chart {
+    float: right;
+    margin: 20px 35px 20px 10px;
+  }
+
+  .metric-details .metric-chart{
+    margin-left: 5%;
+  }
+}
+
+@media (min-width: 1500px) {
+  .metric-details .metric-chart{
+    margin-left: 10%;
+  }
+}
+@media (min-width: 1700px) {
+  .metric-details .metric-chart{
+    margin-left: 15%;
+  }
+}
+@media (max-height: 560px) {
+  .pagelayout-grid .block_lm_kpi.block .header h2 {
+    font-size: 12px;
+  }
+}

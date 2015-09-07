@@ -1,0 +1,39 @@
+/* START Pagination */
+.pagination ul>li>a, .pagination ul>li>span {
+  line-height: 27px;
+  padding: 0;
+  border: none;
+}
+.pagination li > a {
+  background:@white;
+  color: @mainColor;
+  margin: 3px;
+  width: 30px;
+  height: 30px;
+  font-size: 22px;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+
+}
+.pagination li.start a,
+.pagination li.end a
+{
+  background: @blue;
+  color: @white;
+}
+
+.pagination ul li a.active {
+  background: @blue;
+  color: @white;
+}
+.pagination ul li a:hover {
+  color:@white;
+  background:@mainColor;
+}
+.pagination li.start a:hover,
+.pagination li.end a:hover
+{
+  background: @mainColor;
+  color:@white;
+}

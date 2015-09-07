@@ -1,0 +1,29 @@
+.jquery_scroll_plugin_list {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    padding-right: 45px !important;
+    margin-right: -30px !important;
+}
+
+.jquery_scroll_plugin_list::-webkit-scrollbar {
+    display: none !important;
+}
+
+.jquery_scroll_plugin_scroll {
+    position: absolute !important;
+    right: 5px !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    width: 6px !important;
+    background-color: #B9CDE5 !important;
+    border-radius: 2px !important;
+}
+
+.jquery_scroll_plugin_bar {
+    position: absolute !important;
+    width: 6px !important;
+    background-color: #0D316E !important;
+    border-radius: 2px !important;
+    border: solid 1px #4F81BD !important;
+    margin: -1px !important;
+}

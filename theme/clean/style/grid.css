@@ -1,0 +1,191 @@
+
+
+/* Height */
+#page{
+    height: 90%; /*чтобы не было полосы прокрутки*/
+
+}
+#page-content,
+#page .gridcol1{
+    height: 100%;
+}
+
+/** Layouts **/
+
+.pagelayout-grid .gridcol1 > .block{ /* Расположим блоки плиткой, все элементы должны помещаться на 1 экран */
+    float: left;
+    height: 32.4%;
+    width: 32.64%;
+    min-height: 220px;
+}
+
+.pagelayout-grid .block-region{
+    /*background: rgba(255,255,255,0.7);*/
+
+}
+.pagelayout-grid .block{
+    margin-bottom: 8px;
+    /*border: 2px solid #4f81bd;
+    background: transparent;*/
+}
+
+.pagelayout-grid .gridcol1{
+    display: block;
+    width: auto;
+
+    box-sizing: border-box;
+    min-height: 100px;
+}
+
+.pagelayout-grid .gridcol1 > .block{ /** Расположим блоки плиткой, все элементы должны помещаться на 1 экран **/
+
+    margin-right: 8px;
+    box-sizing: border-box;
+}
+
+.pagelayout-grid .block-hider-hide, /** Скрываем лишние контролы (свернуть и переместить в док) **/
+.pagelayout-grid .block-hider-show,
+.pagelayout-grid .customcommand,
+
+.pagelayout-grid .skip-block-to,  /** А также кнопки между блоками, которые мешают сетке **/
+.pagelayout-grid .skip-block
+{
+    display: none;
+}
+.pagelayout-grid .block-control-actions{ /** Двигаем оставшиеся контролы в нужно место **/
+    margin-top: -20px;
+    position: relative;
+    top: -8px;
+}
+.block .header .commands{
+    padding:0;
+    clear: none;
+}
+
+.pagelayout-grid .block .header h2{
+    font-size: 14px;
+    text-align: left;
+    font-weight: normal;
+    position: relative;
+    top: -4px;
+
+}
+.block .header h2{
+    color: #0d316e;
+}
+.pagelayout-grid .block{
+    font-size: 0.9em;
+    line-height: 1.2em;
+    text-align: center;
+}
+
+
+
+
+.pagelayout-grid .block .content {
+    font-size: 14px;
+}
+/* MAX 1200px ) */
+@media (max-width: 1200px) {
+    /** Index page **/
+    .pagelayout-grid .gridcol1 > .block {
+        /** Расположим блоки плиткой, все элементы должны помещаться на 1 экран **/
+        margin-right: 8px;
+    }
+
+    .pagelayout-grid .gridcol1 > .block:nth-of-type(2n) {
+        margin-right: 0;
+    }
+    .pagelayout-grid .gridcol1 > .block {
+        /* Расположим блоки плиткой, все элементы должны помещаться на 1 экран */
+        width: 49.3%;
+    }
+
+
+}
+
+@media (max-width: 767px) {
+
+    .pagelayout-grid .gridcol1 > .block {
+        /* Расположим блоки плиткой, все элементы должны помещаться на 1 экран */
+        width: 100%;
+    }
+
+
+    .pagelayout-grid .gridcol1{
+        width: 100%;
+        float: left; /** Если убрать, то проблема в режиме редактирования с менюшкой настроек блока **/
+    }
+
+    .pagelayout-grid .gridcol1 > .block {
+        margin-right: 0;
+    }
+}
+@media (min-width: 960px) {
+    .pagelayout-grid .gridcol1 {
+        color: #fff;
+        text-align: right;
+    }
+
+    .pagelayout-grid .gridcol2,
+    .pagelayout-grid .gridcol3 {
+        display: none;
+    }
+
+}
+
+@media (min-height: 855px) {
+    .pagelayout-grid .gridcol1 > .block {
+        height: 32.7%;
+    }
+}
+
+@media (min-height: 925px) {
+    .pagelayout-grid .gridcol1 > .block {
+        height: 33%;
+    }
+}
+@media (min-height: 1000px) {
+    .pagelayout-grid .gridcol1 > .block {
+        height: 33.3%;
+    }
+}
+
+@media (max-height: 799px) {
+    .pagelayout-grid .gridcol1 > .block {
+        height: 32%;
+    }
+}
+
+
+
+@media print {
+    .pagelayout-grid .gridcol1 > .block {
+        float: left;
+        height: 250px !important;
+        width: 32.5%;
+    }
+
+    .pagelayout-grid .gridcol1 > .block {
+        margin-right: 0.65%;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

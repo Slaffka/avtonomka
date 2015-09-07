@@ -1,0 +1,88 @@
+/*@import "base.css";*/
+
+.bt-menu ul li,
+.bt-menu ul li a {
+	text-align: center;
+}
+.bt-menu ul{
+    position: absolute;
+    top: 45px;
+    right: -14px;
+    list-style: none;
+    z-index: 999;
+    display: none;
+}
+.bt-menu-open .bt-menu ul{
+    display:block;
+}
+
+.bt-menu ul li {
+    width: 55px;
+    height: 55px;
+    background: #fff;
+    cursor:pointer;
+    margin-top:1px;
+    border-radius:3px;
+    text-align :center;
+    line-height: 55px;
+    font-size: 28px;
+    color:#394c8d;
+    position: relative;
+    display: block;
+}
+
+
+.bt-menu ul li a {
+    background: #fff;
+    border-radius: 3px;
+    height: 55px;
+    white-space: nowrap;
+    font-size: 30px;
+    padding: 0;
+    line-height: 55px;
+    color: #394c8d;
+    text-align: center;
+    position: initial;
+}
+
+.bt-menu ul li:hover a{
+    position: absolute;
+    top: 0;
+    right: 0;
+    line-height: 50px;
+    font-size: 22px;
+    padding: 0 14px;
+}
+
+
+.bt-menu ul li a span{
+    display: none;
+}
+.bt-menu ul li:hover a i{
+     display: none;
+}
+.bt-menu ul li:hover a span{
+    display: inline-block;
+}
+.bt-menu ul li:hover a:after{
+    content: "";
+    width: 3px;
+    height: 50px;
+    background: #394c8d;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+}
+
+
+.bt-menu ul li a:hover,
+.bt-menu ul li a:focus {
+	color: #2980b9;
+    text-decoration: none;
+}
+
+i.bt-icon{
+	width:auto;
+	height: auto;
+	margin:0;
+}

@@ -1,0 +1,1253 @@
+#scorm_content{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    border: none;
+    background:#fff;
+    text-align:center;
+    font-size:20px;
+    color:#ddd;
+}
+#scorm_object{
+    width: 100%;
+    height: 99%;
+    border: none;
+}
+
+
+/* ==========================================================================
+   $BASE-PICKER
+   ========================================================================== */
+/**
+ * Note: the root picker element should *NOT* be styled more than what’s here.
+ */
+.picker {
+    font-size: 16px;
+    text-align: left;
+    line-height: 1.2;
+    color: #000000;
+    position: absolute;
+    z-index: 10000;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+/**
+ * The picker input element.
+ */
+.picker__input {
+    cursor: default;
+}
+/**
+ * When the picker is opened, the input element is “activated”.
+ */
+.picker__input.picker__input--active {
+    border-color: #0089ec;
+}
+/**
+ * The holder is the only “scrollable” top-level container element.
+ */
+.picker__holder {
+    width: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/*!
+ * Default mobile-first, responsive styling for pickadate.js
+ * Demo: http://amsul.github.io/pickadate.js
+ */
+/**
+ * Note: the root picker element should *NOT* be styled more than what’s here.
+ */
+/**
+ * Make the holder and frame fullscreen.
+ */
+.picker__holder,
+.picker__frame {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 100%;
+}
+/**
+ * The holder should overlay the entire screen.
+ */
+.picker__holder {
+    position: fixed;
+    -webkit-transition: background 0.15s ease-out, top 0s 0.15s;
+    -moz-transition: background 0.15s ease-out, top 0s 0.15s;
+    transition: background 0.15s ease-out, top 0s 0.15s;
+    -webkit-backface-visibility: hidden;
+}
+/**
+ * The frame that bounds the box contents of the picker.
+ */
+.picker__frame {
+    position: absolute;
+    margin: 0 auto;
+    min-width: 256px;
+    max-width: 666px;
+    width: 100%;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    opacity: 0;
+    -webkit-transition: all 0.15s ease-out;
+    -moz-transition: all 0.15s ease-out;
+    transition: all 0.15s ease-out;
+}
+@media (min-height: 33.875em) {
+    .picker__frame {
+        overflow: visible;
+        top: auto;
+        bottom: -100%;
+        max-height: 80%;
+    }
+}
+@media (min-height: 40.125em) {
+    .picker__frame {
+        margin-bottom: 7.5%;
+    }
+}
+/**
+ * The wrapper sets the stage to vertically align the box contents.
+ */
+.picker__wrap {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+@media (min-height: 33.875em) {
+    .picker__wrap {
+        display: block;
+    }
+}
+/**
+ * The box contains all the picker contents.
+ */
+.picker__box {
+    background: #ffffff;
+    display: table-cell;
+    vertical-align: middle;
+}
+@media (min-height: 26.5em) {
+    .picker__box {
+        font-size: 1.25em;
+    }
+}
+@media (min-height: 33.875em) {
+    .picker__box {
+        display: block;
+        font-size: 1.33em;
+        border: 1px solid #777777;
+        border-top-color: #898989;
+        border-bottom-width: 0;
+        -webkit-border-radius: 5px 5px 0 0;
+        -moz-border-radius: 5px 5px 0 0;
+        border-radius: 5px 5px 0 0;
+        -webkit-box-shadow: 0 12px 36px 16px rgba(0, 0, 0, 0.24);
+        -moz-box-shadow: 0 12px 36px 16px rgba(0, 0, 0, 0.24);
+        box-shadow: 0 12px 36px 16px rgba(0, 0, 0, 0.24);
+    }
+}
+@media (min-height: 40.125em) {
+    .picker__box {
+        font-size: 1.5em;
+        border-bottom-width: 1px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+}
+/**
+ * When the picker opens...
+ */
+.picker--opened .picker__holder {
+    top: 0;
+    background: transparent;
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#1E000000,endColorstr=#1E000000)";
+    zoom: 1;
+    background: rgba(0, 0, 0, 0.32);
+    -webkit-transition: background 0.15s ease-out;
+    -moz-transition: background 0.15s ease-out;
+    transition: background 0.15s ease-out;
+}
+.picker--opened .picker__frame {
+    top: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    -moz-opacity: 1;
+    opacity: 1;
+}
+@media (min-height: 33.875em) {
+    .picker--opened .picker__frame {
+        top: auto;
+        bottom: 0;
+    }
+}
+
+.picker .mp-header{
+    padding:2%;
+}
+.picker .search-input{
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+/**
+ * For `large` screens, transform into an inline picker.
+ */
+
+
+
+/* ==========================================================================
+   $BASE-TIME-PICKER
+   ========================================================================== */
+/**
+ * The list of times.
+ */
+.picker__list {
+    list-style: none;
+    padding: 0.75em 0 4.2em;
+    margin: 0;
+}
+/**
+ * The times on the clock.
+ */
+.picker__list-item {
+    border-bottom: 1px solid #dddddd;
+    border-top: 1px solid #dddddd;
+    margin-bottom: -1px;
+    position: relative;
+    background: #ffffff;
+    padding: .75em 1.25em;
+}
+@media (min-height: 46.75em) {
+    .picker__list-item {
+        padding: .5em 1em;
+    }
+}
+/* Hovered time */
+.picker__list-item:hover {
+    cursor: pointer;
+    color: #000000;
+    background: #b1dcfb;
+    border-color: #0089ec;
+    z-index: 10;
+}
+/* Highlighted and hovered/focused time */
+.picker__list-item--highlighted {
+    border-color: #0089ec;
+    z-index: 10;
+}
+.picker__list-item--highlighted:hover,
+.picker--focused .picker__list-item--highlighted {
+    cursor: pointer;
+    color: #000000;
+    background: #b1dcfb;
+}
+/* Selected and hovered/focused time */
+.picker__list-item--selected,
+.picker__list-item--selected:hover,
+.picker--focused .picker__list-item--selected {
+    background: #0089ec;
+    color: #ffffff;
+    z-index: 10;
+}
+/* Disabled time */
+.picker__list-item--disabled,
+.picker__list-item--disabled:hover,
+.picker--focused .picker__list-item--disabled {
+    background: #f5f5f5;
+    border-color: #f5f5f5;
+    color: #dddddd;
+    cursor: default;
+    border-color: #dddddd;
+    z-index: auto;
+}
+/**
+ * The clear button
+ */
+.picker--time .picker__button--clear {
+    display: block;
+    width: 80%;
+    margin: 1em auto 0;
+    padding: 1em 1.25em;
+    background: none;
+    border: 0;
+    font-weight: 500;
+    font-size: .67em;
+    text-align: center;
+    text-transform: uppercase;
+    color: #666;
+}
+.picker--time .picker__button--clear:hover,
+.picker--time .picker__button--clear:focus {
+    color: #000000;
+    background: #b1dcfb;
+    background: #ee2200;
+    border-color: #ee2200;
+    cursor: pointer;
+    color: #ffffff;
+    outline: none;
+}
+.picker--time .picker__button--clear:before {
+    top: -0.25em;
+    color: #666;
+    font-size: 1.25em;
+    font-weight: bold;
+}
+.picker--time .picker__button--clear:hover:before,
+.picker--time .picker__button--clear:focus:before {
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   $DEFAULT-TIME-PICKER
+   ========================================================================== */
+/**
+ * The frame the bounds the time picker.
+ */
+.picker--time .picker__frame {
+    min-width: 256px;
+    max-width: 320px;
+}
+/**
+ * The picker box.
+ */
+.picker--time .picker__box {
+    font-size: 1em;
+    background: #f2f2f2;
+    padding: 0;
+}
+@media (min-height: 40.125em) {
+    .picker--time .picker__box {
+        margin-bottom: 5em;
+    }
+}
+
+
+/********** ОБЩЕЕ **********************/
+    /* Правки bootstrap */
+        .dropdown-menu{
+            text-align: left;
+        }
+
+        .tooltip{
+            text-shadow: none;
+        }
+
+        .radio.inline, .checkbox.inline{
+            padding-top:0!important;
+        }
+        input[type="radio"], input[type="checkbox"]{
+            margin-top: 4px!important;
+        }
+
+    /* Для editable */
+        .editable-address {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .editable-address span {
+            width: 70px;
+            display: inline-block;
+        }
+        .editable-input textarea{
+            width: 300px!important;
+            height: 300px;
+        }
+
+
+
+    .control-row{
+        display:block;
+        margin-bottom: 5px;
+        border-bottom: 1px solid #ddd;
+    }
+    .control-row .lbl{
+        width: 150px;
+        display: inline-block;
+        vertical-align: top;
+    }
+    .control-row .val{
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .paging{
+        background-color: #eee;
+        padding: 5px;
+        margin-top: -15px;
+    }
+    .row-partner,
+    .row-activity,
+    .row-place{
+        cursor: pointer;
+    }
+
+    .nonecontenteditable{
+        display: inline-block;
+        line-height: 14px;
+        padding: 7px;
+        margin: 6px 0;
+    }
+    .contenteditable{
+        border-radius:3px;
+        display: inline-block;
+        line-height: 14px;
+        padding: 7px;
+        min-width: 200px;
+        border: 1px solid #eaeaea;
+        margin: 6px 0;
+    }
+    .contenteditable:hover{
+        border:1px solid #aeaeae;
+    }
+    .ce-addon{
+        margin:6px 0;
+    }
+    .ce-addon input,
+    .ce-addon select{
+        margin:0!important;
+    }
+
+    .nonece-textarea{
+        display: block;
+        padding:5px 7px!important;
+        min-height:150px;
+    }
+    .ce-textarea{
+        display: block;
+        padding:5px 7px!important;
+        min-height:150px;
+        border: 1px solid #eaeaea;
+    }
+
+    .tab-content{
+        overflow: visible!important;
+    }
+
+    .close-instance button{
+        border:none;
+        font-weight: bold;
+        width: 100px;
+    }
+
+    .muted-placeholder{
+        font-size: 30px;
+        color: #ddd;
+    }
+
+
+    /* Стиль рамки для эффекта перемещения jquery-ui */
+    .ui-effects-transfer {
+        border: 1px dotted black;
+    }
+
+    .userpicture{
+        border-radius: 50%;
+    }
+    .modal-backdrop{
+        /*background-color: transparent!important;*/
+    }
+    .picker .modal{
+        position:static!important;
+        top:0!important;
+        left:0!important;
+        margin:0 auto!important;
+        min-height: 100%;
+    }
+
+/********** МОДАЛЬНЫЕ ОКНА **********************/
+    #addstaff-modal .ttlist{
+        width: 440px;
+    }
+
+/********** ПАРТНЕРЫ **********************/
+
+    .lm-section-header{
+        font-family: SansYota-W6SemiBold;
+        color: #474747;
+        font-size: 28px;
+        background-color: #eee;
+        padding: 10px;
+        line-height: 40px;
+        margin: 10px -19px;
+    }
+    .lm-section-panel {
+        border-top: 1px dashed #bbb;
+        margin-top: 10px;
+        padding: 5px 10px;
+    }
+    .lm-section-panel label{
+        display: inline-block;
+    }
+    .lm-section-panel label select{
+        max-width: 200px;
+        margin: 0 20px 0 5px;
+    }
+
+    .staff-filter-selects{
+        margin-bottom: 10px;
+    }
+
+
+
+    /** программы **/
+    #menumenuaddprogram{
+        width: 100%;
+    }
+
+    /** менеджеры **/
+    .manager .pointname{
+        font-weight: bold;
+    }
+    .manager{
+        margin: 10px 0;
+        padding: 5px 0;
+        border-bottom: 1px solid #eee;
+    }
+    .manager .descr{
+        margin-left: 15px;
+        padding: 4px 0;
+    }
+    .manager .userpicture img{
+
+    }
+    .manager.no-manager .descr{
+        padding: 0;
+        line-height: 50px;
+    }
+    .manager.processing{ /* Переназначение менеджера */
+        background: url('/pix/i/loading_small.gif') no-repeat 97% 10%;
+        background-color: #eee;
+        padding: 10px;
+    }
+
+    /** сотрудники **/
+    .staff-panel{
+
+        min-height: 220px;
+    }
+    .staff-list{
+        width: 100%;
+        /*min-height: 150px;*/
+        display: block;
+        text-align: center;
+    }
+    .staff-panel .muted-placeholder{
+        line-height: 150px;
+        text-align: center;
+    }
+    .btn-gotoarchive{
+        cursor: pointer;
+        top: 0;
+        position: absolute;
+        right: 0;
+        text-align: center;
+        width: 90px;
+        height: 100%;
+    }
+    .btn-gotoarchive:hover{
+        background-color: #f5f5f5;
+    }
+    .btn-gotoarchive:hover{
+        color: #000;
+    }
+    .btn-gotoarchive div{
+        margin-top: 40%;
+    }
+    .btn-gotoarchive i{
+        font-size: 30px;
+    }
+/*    .btn-addstaff{
+        line-height: 50px!important;
+    }*/
+    .staff-table{
+        margin-bottom: 20px;
+        width: 110px;
+        height: 110px;
+        display: inline-block;
+    }
+    .staff-table.processing{ /* Перемещение сотрудника в другую ТТ */
+        background: url('/pix/i/loading_small.gif') no-repeat 97% 10%;
+        background-color: #eee;
+        padding: 10px;
+    }
+    .staff-table:hover{
+        border-radius: 5px;
+        background-color: #f5f5f5;
+    }
+    .staff-table td{
+        text-align: center;
+        padding:0 5px;
+    }
+    .staff-table tr:first-child td{
+        padding-top:5px;
+        padding-bottom:4px;
+    }
+
+
+    /* торговые точки */
+    .partner-tt{
+        display: inline-block;
+        text-align: center;
+        margin: 10px;
+        width: 110px;
+        overflow: hidden;
+        height: 110px;
+    }
+    .partner-tt a{
+        text-decoration: none!important;
+    }
+    .partner-tt .icon{
+        font-size: 30px;
+        display: block;
+        color: #aaa;
+    }
+    .partner-tt .icon:hover{
+        color: #00aeef;
+    }
+
+
+
+/********** АКТИВНОСТИ **********************/
+    .datecontrols:last-child .btn-remove{
+        display:none;
+    }
+    .members-panel .partnerlink{
+        font-size: 10px;
+        line-height: 10px;
+        margin-bottom: 8px;
+    }
+    .activityinfo .btn-addmember{
+
+    }
+    .activityinfo .staff-table{
+        width: 150px;
+        height: 130px;
+    }
+
+
+/********** КОМПАНИИ **********************/
+    #companieslist .action{
+        margin-left:10px;
+    }
+
+
+/********* РЕГИОНЫ ************************/
+    .regionlist .cell.c0{
+        width:50px;
+    }
+    .regionlist .cell.c1{
+        width:300px;
+    }
+    .regionlist .action{
+        margin-left:14px;
+    }
+
+    .regionlist .action.btn,
+    .removetrainer.btn,
+    .btn-flat{
+        border:none!important;
+    }
+
+    .regionlist .showrow:hover .action.btn{
+        display:inline-block;
+    }
+
+
+/********* МЕСТА ПРОВЕДЕНИЯ **************/
+.control-row .manager{
+    margin:0;
+    padding:0;
+    border:none;
+}
+
+/********* ПРОГРАМЫ **************/
+    .programgroup .btn.editprogram{
+        margin-right: 10px;
+    }
+    .programgroup .c1{
+        width: 100%;
+    }
+    .programgroup .c2{
+        min-width: 70px;
+        text-align: right;
+    }
+
+/********* ОТЧЕТЫ ***********************/
+    .report-wrapper{
+        overflow-x: scroll;
+        min-height:300px;
+    }
+    .report-header{
+        font-family: SansYota-W6SemiBold;
+        color: #474747;
+        font-size: 24px;
+        line-height: 40px;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    h3.chart-placeholder{
+        text-align: center;
+        color: #ddd;
+        line-height:300px;
+    }
+
+    #memberslist{
+        width:inherit!important;
+    }
+    .filtermenu{
+        margin-right:10px;
+    }
+
+    /* отчет по Партнеру */
+    #menuprogram, #menupartner{
+        max-width: 200px;
+    }
+
+    /** отчет по ТМ **/
+    .tm-results-table .c1{
+        min-width: 200px;
+    }
+    .tm-results-table .header{
+        line-height: 12px!important;
+        max-width: 70px;
+        overflow: hidden;
+    }
+    .tm-results-table .header a{
+        font-size: 12px;
+    }
+    .tm-results-table.flexible th, .tm-results-table th, .tm-results-table.flexible td, .tm-results-table td {
+        padding: 5px!important;
+        line-height: 15px!important;
+    }
+
+    /** отчет по Тренеру **/
+    .report-indexes-nav{
+        margin: 0 auto 50px;
+        max-width: 490px;
+        min-width: 100px;
+    }
+    .btn-viewindexes{
+        font-size: 20px;
+        width: 110px;
+        text-align: center;
+        cursor: pointer;
+        float: left;
+        border: 1px solid #fff;
+        padding: 5px;
+        text-decoration: none;
+        color: #666;
+        word-wrap: break-word;
+    }
+    .btn-viewindexes.current{
+        color: #00aeef;
+    }
+    .btn-viewindexes.disabled,
+    .btn-viewindexes.disabled .icon,
+    .btn-viewindexes.disabled .fa{
+        color:#ddd!important;
+        text-decoration: none;
+        border: 1px solid #fff!important;
+    }
+    .btn-viewindexes:hover{
+        color: #00aeef;
+        border:1px solid #ddd;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+    .btn-viewindexes .icon,
+    .btn-viewindexes .fa{
+        display: block;
+        font-size: 30px;
+        margin-bottom: 6px;
+    }
+    .btn-viewindexes:hover .icon,
+    .btn-viewindexes:hover .fa{
+        color: #00aeef;
+    }
+
+/** ИМПОРТ ДАННЫХ ПО ПРОДАЖАМ **/
+    .fieldmarker-error{
+        border: 1px solid red!important;
+    }
+    .process-warning{
+        color: red;
+        text-align: center;
+    }
+    .process-ok{
+        color: green;
+        text-align: center;
+    }
+    .process-sub{
+        font-size: 0.8em;
+        line-height: 11px;
+    }
+
+    .c3 .process-ok{
+        width: 190px;
+        font-weight: bold;
+    }
+
+    .form-actions{
+        text-align: center;
+    }
+    .form-actions a{
+        line-height: 30px;
+        vertical-align: top;
+        margin-right: 10px;
+    }
+
+    .partnercorrector td.c2,
+    .partnercorrector td.c3{
+        text-align: center;
+    }
+    .multiexistscorrector select{
+        width:250px;
+    }
+
+
+/** ПРОФИЛЬ ПОЛЬЗОВАТЕЛЯ **/
+    .menurole{
+        float:right;
+    }
+
+    /* Таблицы в блоках */
+    .block .lm-table{
+
+    }
+    .block .table.lm-table th{
+        padding:0 4px 2px;
+    }
+    .block .table.lm-table td{
+        padding: 2px 3px;
+        font-size: 1em;
+        line-height: 1em;
+    }
+    .block .table.lm-table tr{
+
+    }
+    .block .table.lm-table .td-italic{
+        font-size: 0.9em;
+        font-style: italic;
+    }
+    .block .table.lm-table .subth{
+        font-weight: bold;
+        font-size: 0.9em;
+        padding-top: 7px;
+    }
+
+    /* Сетка */
+    .pagelayout-grid.editing .lm-block-details{
+        display: none;
+    }
+    .pagelayout-grid .lm-block-details{
+        float: right;
+        text-decoration: none;
+        text-transform: capitalize;
+        font-size: 1.1em;
+        font-weight: normal;
+        display: block;
+        padding: 2px 10px;
+        border-radius: 10px;
+        margin-top: -5px;
+        margin-right: -25px;
+        color: #01416a;
+    }
+
+
+    @media (min-width: 960px) {
+        #page-lm-profile-index.pagelayout-grid .gridcol1 > div:nth-of-type(8), /* Последний ряд плитки меньше по высоте */
+        #page-lm-profile-index.pagelayout-grid .gridcol1 > div:nth-of-type(9),
+        #page-lm-profile-index.pagelayout-grid .gridcol1 > div:nth-of-type(10){
+
+        }
+
+        #page-lm-profile-evolution.pagelayout-grid .gridcol1 > div:nth-of-type(7), /* Последний ряд плитки меньше по высоте */
+        #page-lm-profile-evolution.pagelayout-grid .gridcol1 > div:nth-of-type(8),
+        #page-lm-profile-evolution.pagelayout-grid .gridcol1 > div:nth-of-type(9){
+
+        }
+    }
+
+
+
+    @media print {
+        div.block{
+            border:1px solid #000;
+        }
+        .navbar{
+            display: none;
+        }
+
+
+        .lm-block-details{
+            display: none!important;
+        }
+        .pagelayout-grid .block .content{
+            padding-top:15px!important;
+        }
+        #page-lm-profile-index.pagelayout-grid .gridcol1 > div:nth-of-type(8), /* Последний ряд плитки меньше по высоте */
+        #page-lm-profile-index.pagelayout-grid .gridcol1 > div:nth-of-type(9),
+        #page-lm-profile-index.pagelayout-grid .gridcol1 > div:nth-of-type(10){
+
+        }
+
+        #page-lm-profile-evolution.pagelayout-grid .gridcol1 > div:nth-of-type(7), /* Последний ряд плитки меньше по высоте */
+        #page-lm-profile-evolution.pagelayout-grid .gridcol1 > div:nth-of-type(8),
+        #page-lm-profile-evolution.pagelayout-grid .gridcol1 > div:nth-of-type(9){
+
+        }
+        #page-lm-profile-calendar.pagelayout-grid .gridcol1 > div:nth-of-type(7), /* Последний ряд плитки меньше по высоте */
+        #page-lm-profile-calendar.pagelayout-grid .gridcol1 > div:nth-of-type(8),
+        #page-lm-profile-calendar.pagelayout-grid .gridcol1 > div:nth-of-type(9){
+
+        }
+    }
+
+    /** Under constructions styles **/
+    .pagelayout-grid .block .content{
+        display: inline-block;
+        vertical-align: middle;
+        margin-top: -26px;
+    }
+    .pagelayout-grid .block:after {
+        display:inline-block;
+        vertical-align:middle;
+        height:100%;
+        width:0;
+        content: " ";
+    }
+
+    .under-construction{text-align: center;display: table;width: 100%;}
+    .uc-tr{display: table-row;}
+    .uc-td{display: table-cell;vertical-align: middle;}
+    .uc-td:first-child{width:40%}
+    .under-construction .uc-label{font-size: 16px;padding: 0 10px 15px;}
+
+    .under-construction-vertical{display:block}
+    .under-construction-vertical .uc-tr{display: block}
+    .under-construction-vertical .uc-td{display: block}
+    .under-construction-vertical .uc-td:first-child{width:auto}
+
+
+
+
+
+/** УПРАВЛЕНИЕ ЭТАПАМИ РАЗВИТИЯ **/
+    #page-lm-matrix-index .btn-del-program{
+        position: relative;
+        top: -5px;
+    }
+    .matrix-list{
+        list-style: none;
+    }
+
+    .post-item-header{
+        border-bottom: 1px solid #ddd;
+        padding: 10px 15px 0;
+    }
+    .post-item-stages-off{
+        margin-left: 20px;
+        color: #999;
+    }
+
+    .post-name-wrapper {
+        cursor: pointer;
+        color: #333;
+        text-decoration: none;
+        float:left;
+        display: block;
+    }
+    .post-name-wrapper:hover,
+    .post-name-wrapper:active,
+    .post-name-wrapper:visited,
+    .post-name-wrapper:focus{
+        text-decoration: none;
+        color: #333;
+    }
+    .post-name-wrapper i{
+        margin-right: 5px;
+        position: relative;
+        top: -2px;
+        color: #333;
+    }
+    .post-name-wrapper .fa-plus-square-o{ display: none; }
+    .post-name-wrapper.collapsed .fa-plus-square-o{ display: inline-block; }
+    .post-name-wrapper .fa-minus-square-o{ display: inline-block; }
+    .post-name-wrapper.collapsed .fa-minus-square-o{ display: none; }
+
+    .post-item .stages-switcher{
+        margin-left: 25px;
+        float:right;
+        display: block;
+        line-height: 35px;
+    }
+
+
+    #page-lm-matrix-index .post-name{
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 35px;
+    }
+
+    .stages-list{
+        padding-left: 10px;
+        overflow: hidden; /* чтобы не глючил collapse, когда его сворачиваем */
+    }
+    #page-lm-matrix-index .stage-name{
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 30px;
+    }
+
+
+    /* Стили для перетаскивания пунктов списка (программ) */
+    body.dragging, body.dragging * {
+        cursor: move !important;
+    }
+    .dragged {
+        position: absolute;
+        opacity: 0.5;
+        z-index: 2000;
+    }
+
+    ul.matrix-program-list{
+        list-style: decimal;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+    ul.matrix-program-list .program-item-tpl{
+        list-style: none;
+    }
+    ul.matrix-program-list .program-item-tpl .program-move{
+        display: none;
+    }
+    ul.matrix-program-list .program-item-tpl select{
+        margin: 10px 0 30px 19px;
+    }
+    ul.matrix-program-list li.placeholder {
+        position: relative;
+        /** More li styles **/
+    }
+    ul.matrix-program-list li.placeholder:before {
+        position: absolute;
+        /** Define arrowhead **/
+    }
+    ul.matrix-program-list .program-move{
+        cursor: move;
+    }
+
+    /*  Если пользователь пытается выбрать программу, которая уже есть в списке */
+    ul.matrix-program-list .check-program{
+        border:1px solid red;
+    }
+
+
+/** МОИ КУРСЫ **/
+    .path-manage_mycourses,
+    .path-manage_mycourses #region-main,
+    .path-manage_mycourses #page{
+        padding:0;
+    }
+    .path-manage_mycourses #page{
+        /*max-width: 100%;*/
+    }
+    .path-manage_mycourses #page-header{
+        display: none;
+    }
+    .path-manage_mycourses #region-main{
+        background: transparent;
+        box-shadow: none;
+    }
+    .path-manage_mycourses #region-main h3{
+        color: #ffffff;
+        text-align: center;
+    }
+    .lm-stages{
+        height: 300px;
+        padding-bottom: 60px;
+    }
+    .lm-stage{
+        float: left;
+        height: 100%;
+        width: 25%;
+        text-align: center;
+        padding-bottom: 60px;
+    }
+.lm-stage.lm-stage-skilled{
+    padding-bottom: 52px;
+}
+
+    .lm-stage-newcomer{
+        height: 55%;
+        padding-top:70px;
+        margin-top: 65px;
+    }
+    .lm-stage.active{
+        background: rgba(255,255,255,.45);
+        border-radius: 7px;
+    }
+    .lm-stage-spec{
+        height: 75%;
+        margin-top: 30px;
+        padding-top: 45px;
+    }
+    .lm-stage-skilled{
+        height: 85%;
+        padding-top: 53px;
+    }
+    .lm-stage-profi{
+        padding: 23px 0 37px 0;
+    }
+
+    .lm-stage img{
+        height: 100%;
+        display: block;
+        margin: 0 auto;
+    }
+    .lm-stage-name-wrapper{
+        color: #1f497d;
+        font-weight: bold;
+    }
+    .lm-stage-name{
+        width: 70%;
+        margin: 0 auto;
+        line-height: 35px;
+        margin-top: 10px;
+        background: rgba(255,255,255,.55);
+        border-radius: 18px;
+    }
+    .lm-stage.active .lm-stage-name{
+        background:rgba(142, 180, 227, .7);
+    }
+
+
+    .lm-mycourses-list-wrapper{
+        background-color: rgba(255,255,255,.45);
+        min-height: 200px;
+        border-radius: 7px;
+    }
+    .lm-mycourse{
+        width: 25%;
+        background: rgba(255,255,255,.85);
+        border-radius: 5px;
+        padding: 5px;
+        margin: 1%;
+        float: left;
+        min-width: 170px;
+        /*box-shadow: 0 1px 1px rgba(140,140,140, .8);*/
+    }
+    .lm-mycourse .lm-course-name{
+        text-align:center;
+        width:85%;
+        float:left;
+        display: table;
+        padding:0 10px;
+        box-sizing: border-box;
+        height: 60px;
+    }
+    .lm-mycourse .lm-course-name .valign-middle {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .lm-mycourse .lm-course-name a{
+        display: table-cell;
+        vertical-align: middle;
+        height: 60px;
+        color:#444;
+        font-size: 16px;
+    }
+    .lm-course-progress{
+        width:15%;
+        float:right;
+        height: 60px;
+        display: table;
+    }
+    .lm-indicator-wrapper{
+        width: 21px;
+        height: 40px;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+    }
+    .lm-indicator-wrapper .fa-lock{
+        font-size: 30px;
+        color: #ed7b08;
+    }
+    .lm-course-progress .lm-indicator{
+        background:url("/blocks/manage/tpl/cherkizovo/img/batteries.svg");
+        width: 21px;
+        height: 40px;
+        background-size: cover;
+        margin: 0 auto;
+    }
+    .lm-course-progress .lm-indicator0{
+        background-position: 22px 0;
+    }
+    .lm-course-progress .lm-indicator25{
+        background-position: -66px 0;
+    }
+    .lm-course-progress .lm-indicator50{
+        background-position: -44px 0;
+    }
+    .lm-course-progress .lm-indicator75{
+        background-position: -22px 0;
+    }
+    .lm-course-progress .lm-indicator100{
+        background-position: 0 0;
+    }
+    #modal-locked-courses .modal-header{
+        border:none;
+    }
+
+
+    /* Режи в котором пользователь видет только назначенные курсы (без этапов развития) */
+    .lm-mycourses-standard{
+
+    }
+    .lm-mycourses-empty{
+        background: rgba(255,255,255,.7);
+        border-radius: 5px;
+        padding: 10px;
+        margin: 1%;
+        min-height: 200px;
+        text-align: center;
+    }
+    .lm-mycourses-standard .lm-mycourse{
+        width: 48%;
+        box-sizing: border-box;
+        height: 120px;
+    }
+    .lm-mycourses-standard .lm-course-image{
+        float: left;
+        position: relative;
+    }
+    .lm-mycourses-standard .lm-course-progress{
+        width: 50px;
+    }
+    .lm-mycourses-standard .lm-course-name{
+        width: 100%;
+        margin: 0 -50px 0 -170px;
+        padding: 0 60px 0 180px;
+        text-align: left;
+        display: table;
+        height: 110px;
+        max-height: 110px;
+    }
+    .lm-mycourses-standard .lm-indicator-wrapper{
+        height: 110px;
+    }
+

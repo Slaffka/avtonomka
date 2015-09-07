@@ -1,0 +1,47 @@
+.timepicker {
+    display: inline-block;
+}
+.period .range_month {
+    margin-left: 0;
+}
+.period .period-month {
+    background-color: rgba(255, 255, 255,0.8);
+    text-align: left!important;
+    position: absolute;
+    height: 38px;
+    padding: 0;
+    border-radius: 3px;
+    margin-left: -117px;
+}
+.period .startyear, .endyear {
+    width: 80px; height: 30px;
+}
+.period .startmonth, .endmonth {
+    width: 105px; height: 30px;
+}
+input.range_month {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: solid 1px rgb(205, 205, 205);
+    background-color: rgba(255, 255, 255, 1);
+    width: 172px;
+    height: 30px !important;
+    font-size: 18px;
+    text-align: center;
+    line-height: 25px;
+    margin-right: 10px;
+    position: relative;
+    margin-bottom: 4px;
+}
+
+.period .mdash {
+    padding: 3px;
+    font-size: 20px;
+    color: black;
+    text-shadow: 2px 2px 10px #7A7A7A;
+}
+div.period {
+    float: left;
+}
+

@@ -1,0 +1,54 @@
+.pagelayout-grid .block.block_lm_notifications .content {
+  margin-top: 5px;
+  overflow: hidden;
+  position: relative;
+}
+.pagelayout-grid .block.block_lm_notifications:after {
+  display: none;
+}
+.lm_notifications_notification_list {
+  text-align: left;
+  overflow: auto;
+  overflow-x: hidden;
+  width: 300px;
+  height: 150px;
+  padding-right: 45px;
+  margin-right: -30px;
+}
+.lm_notifications_notification_list::-webkit-scrollbar {
+  display: none;
+}
+.lm_notifications_notification {
+  position: relative;
+  border-bottom: solid 1px #4A7EBB;
+  padding: 10px 5px 10px 25px;
+  font-size: 14px;
+}
+.lm_notifications_notification:first-child {
+  border-top: solid 1px #4A7EBB;
+}
+.lm_notifications_notification:before {
+  content: ' ';
+  display: inline-block;
+  vertical-align: middle;
+  width: 5px;
+  height: 20px;
+  margin: 5px 5px 5px -15px;
+}
+.lm_notifications_type_success:before {
+  background-color: #5cb85c;
+}
+.lm_notifications_type_info:before {
+  background-color: #5bc0de;
+}
+.lm_notifications_type_warning:before {
+  background-color: #f0ad4e;
+}
+.lm_notifications_type_danger:before {
+  background-color: #d9534f;
+}
+.lm_notifications_message {
+  display: inline-block;
+  vertical-align: middle;
+  color: #1F497D;
+}

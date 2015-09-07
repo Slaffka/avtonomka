@@ -1,0 +1,14 @@
+.block_lm_assessment_360 .content {
+  text-align: center;
+  padding-top: 2px!important;
+  background-image: url(data:image/png);
+  height: 85%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.block_lm_assessment_360 .content img {
+  max-width: 100% !important;
+  height: auto;
+  display: block;
+}

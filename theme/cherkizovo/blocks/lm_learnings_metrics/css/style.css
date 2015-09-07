@@ -1,0 +1,38 @@
+/*variables*/
+/*Цвет кнопок*/
+/*Цвет выделенного пункта меню, фон таблиц*/
+/*Main*/
+/*Цвет текста, заголовков, hover кнопок, фона меню, границы столбцов таблицы*/
+/*Цвет фона блоков и графиков*/
+/*table */
+/*Bank */
+/*Rating */
+/*Myteam */
+/*цвет ссылок*/
+/*Цвет переключателя*/
+/*Feedback */
+/*KPI*/
+.metrics-container {
+  margin-top: 10px;
+}
+.line1 {
+  margin-top: 53px;
+  font-size: 22px;
+  font-weight: bold;
+}
+.line2 {
+  font-size: 18px;
+}
+.line-one {
+  margin-top: 55px;
+  line-height: 15px;
+  font-weight: bold;
+}
+.line-two {
+  line-height: 15px;
+}
+@media print {
+  .block_lm_learning_metrics {
+    margin-right: 8px;
+  }
+}

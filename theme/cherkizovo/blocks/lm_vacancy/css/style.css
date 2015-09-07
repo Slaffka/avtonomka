@@ -1,0 +1,28 @@
+.vacancies {
+  text-align: center;
+}
+.vacancy {
+  line-height: 35px;
+}
+.vacancy span {
+  display: inline-block;
+  padding: 0 15px;
+  cursor: pointer;
+}
+.vacancy.current span {
+  background: #b9cde5;
+  border-radius: 15px;
+  cursor: default;
+}
+.vacancy-region {
+  line-height: 16px;
+  border-bottom: 1px solid #eee;
+}
+.vacancy-region-name {
+  float: left;
+  padding-left: 10px;
+}
+.vacancy-region-count {
+  float: right;
+  padding-right: 10px;
+}

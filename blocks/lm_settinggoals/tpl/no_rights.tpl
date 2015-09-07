@@ -1,0 +1,1 @@
+<div class="block settinggoals-error">У вас нет прав для просмотра этой страницы!</div>

@@ -1,0 +1,321 @@
+@import "../../../less/variables.less";
+
+.block_lm_rating svg{
+  margin-top: 35px;
+}
+@media only screen and (max-device-width: 720px) {
+  div.col_right_title, div.col_right  {
+    display: none;
+  }
+  div.table {
+    border-spacing: 1px 1px !important;;
+  }
+  div.col_left, .col_left span {
+    line-height: 44px !important;;
+    height: 44px !important;;
+  }
+  span.fio img {
+    width: 32px;
+    height: 32px;
+  }
+  .th .point, span.point {
+    width: 15% !important;
+  }
+  .th .fio, span.fio {
+    width: 65% !important;
+  }
+  .th .bal, span.bal {
+    width: 15% !important;
+  }
+  .pagination li > a {
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 16px !important;
+    line-height: 30px !important;
+  }
+  .th span {
+    font-size: 12px !important;
+  }
+  .table .col_left_title {
+    width:100% !important;
+  }
+  .table .col_left {
+    width:100% !important;
+  }
+}
+
+.block_lm_rating .content{
+  width: 98%;
+}
+
+.subanv-rating .lm-subnav{
+  float: none !important;
+}
+/*lm-subnav-geo*/
+
+.lm-subnav-geo {
+  width: 100%;
+  height: 60px;
+  margin: 0;
+
+}
+
+.lm-subnav-geo-inner{
+  background: @subNavBack;
+  height: 60px;
+  border-radius: 5px;
+  margin-top: 2px;
+}
+.lm-subnav-geo ul {
+  margin: 0;
+  float: left;
+}
+.userloggedinas .lm-subnav-geo-inner {
+  background: transparent;
+}
+
+
+.lm-subnav-geo ul li a {
+  color: @subNavColor;
+}
+
+
+.subnav-left{
+  float: left;
+  background: @subNavBack;
+  border-radius: 5px;
+}
+.lm-subnav-geo .newbies-alert{
+  color: @white;
+  line-height: 60px;
+  margin-left:25px ;
+  font-size: 22px;
+}
+.posts{
+  padding-right: 20px;
+}
+.type li:first-child:before{
+  content: "";
+  border-left: 2px solid #c2c4cb;
+  position: relative;
+  left: -22px;
+}
+
+.path-lm_bank .type li:first-child:before{
+  border-left: none;
+}
+.path-lm_bank hr{
+  border-top: 0;
+  border-bottom: 0;
+}
+.lm-subnav-geo.lm-subnav ul li{
+  padding: 10px 15px;
+}
+.lm-subnav-geo.lm-subnav ul li a:hover{
+  border-bottom: 2px solid @mainColor;
+  padding-bottom: 5px;
+  color: @mainColor;
+}
+ul li.current a{
+  border-bottom: 2px solid @mainColor;
+  padding-bottom: 5px;
+  color:@mainColor;
+}
+
+.user-search{
+  color:@red;
+  float: right;
+  margin-top: 40px;
+  margin-right: 22px;
+  display: none;
+}
+.timepicker{
+  float: right;
+  margin-top: 15px;
+}
+.nodata {
+  color: @grey;
+  background: @blockColor;
+  font-size: 28px;
+  height: 200px;
+}
+
+
+/*lm-subnav-geo*/
+
+
+
+
+/** Widget styles **/
+.my-rating-results {
+  margin-top: -52px;
+  /*  padding-left: 100px;*/
+  font-size: @secondFont;
+}
+
+  .path-manage_profile .my-rating-results{
+    padding-left: 87px;
+}
+.rating-result{
+  box-sizing: border-box;
+  float:left;
+  width:28%;
+  height: 40px;
+  position: relative;
+  z-index: 2;
+  line-height: 28px;
+}
+.path-manage_profile .rating-result{
+  width: 27%;
+  line-height: 20px;
+  font-size: 12px;
+  margin-left: 3%;
+}
+
+#myteam-rating-diagram .rating-result{
+  width:14%;
+  float: none;
+}
+#myteam-rating-diagrams .rating-result{
+  width:24%;
+  line-height: 22px;
+  float: none;
+}
+
+.graph-view .my-rating-results{
+  margin-top: -22px;
+}
+
+/* START MODAL */
+.modal-backdrop.fade.in {
+  background:  @modalBack;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+
+.modal {
+  border-radius: 4px;
+  width: 70%;
+  margin-left: -34%;
+}
+
+.modal .modal-title {
+  color: @modalColor;
+  font-size: @mainFont;
+  font-weight: 500;
+}
+.modal .close {
+  color: @modalClose;
+  text-decoration: underline;
+  opacity: 1;
+  margin-top: 9px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.modal .th_title {
+  color: @white;
+  font-weight: 500;
+}
+.modal .th_main {
+  background-color: @modalTh;
+  border-radius: 5px;
+}
+.modal .param {
+  background-color: @modalParam;
+  height: 75px;
+  border: solid 1px white;
+  border-radius: 3px;
+  font-size: 19px;
+  color: @mainColor;
+}
+.modal-footer {
+  background-color: @white;
+  border-top: 0 solid @grey;
+}
+.modal-header {
+  border-bottom: 0 solid @grey;
+}
+/* END MODAL */
+@media print {
+  .my-rating-results {
+    margin-top: -88px;
+    font-size: 14px;
+  }
+}
+
+/* Current-rating индивидуальные стили */
+
+.table-myteam.current-rating thead th {
+  padding:10px;
+  border-right: 1px solid @grey;
+}
+.table-myteam.current-rating td {
+  padding: 8px 10px;
+}
+
+
+
+.table-myteam.current-rating td:first-child,
+.table-myteam.current-rating td:nth-child(5)
+{
+  width: 6.4%;
+}
+.table-myteam.current-rating td:nth-child(2) {
+  width: 25%;
+  text-align: left;
+}
+.table-myteam.current-rating tr:first-child td {
+  padding: 8px 10px;
+}
+
+
+
+.table-myteam.current-rating tr th:nth-child(3)
+{
+  background:  @tdBack;
+}
+.table-myteam.current-rating tr:nth-child(2n+1) td:nth-child(3)
+{
+  background: @tdBack2;
+}
+.table-myteam.current-rating tr:nth-child(2n) td:nth-child(3)
+{
+  background: @tdBack;
+}
+td.moder:hover {
+  background-color:  @tdHover !important;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .my-rating-results{
+ /*   padding-left: 96px;*/
+  }
+  #myteam-rating-diagram .rating-result{
+    width:19%;
+  }
+}
+
+@media (min-width: 960px) {
+  .my-rating-results{
+ /*   padding-left: 100px;*/
+  }
+  #myteam-rating-diagram .rating-result{
+    width:15%;
+  }
+
+}
+
+@media (max-height: 560px) {
+  .pagelayout-grid .block_lm_rating.block .header h2 {
+    font-size: 12px;
+  }
+  .path-manage_profile .rating-result {
+    line-height: 16px;
+    font-size: 11px;
+    margin-left: 2%;
+  }
+}
+
+
+

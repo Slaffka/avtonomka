@@ -1,0 +1,12 @@
+php_value post_max_size 700M
+php_value upload_max_filesize 700M
+php_value max_execution_time 259200
+#php_value display_errors 1
+
+
+RewriteEngine On
+RewriteCond %{REQUEST_URI} /anonimus
+RewriteRule ^(.*)$ index.php [L,QSA]
+
+RewriteCond %{REQUEST_URI} /my
+RewriteRule ^(.*)$ /blocks/manage/?_p=mycourses [L,QSA]

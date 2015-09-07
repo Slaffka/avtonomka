@@ -1,0 +1,318 @@
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+
+/** General **/
+[class^="icon-"], [class*=" icon-"]{ /* Clean bootstrap2 properties */
+    background:none;
+}
+html, body{
+    height:100%;
+    padding:0;
+    margin:0;
+}
+
+
+body{
+    background: #ddd;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: Candara, 'Times New Roman',Arial, sans-serif;
+    color: @mainColor;
+    font-size: @secondFont;
+}
+
+.btn,
+.btn:visited,
+.btn:active,
+.btn.active,
+.btn.disabled,
+input[type="submit"],
+input[type="submit"]:visited,
+input[type="submit"]:active,
+input[type="submit"].active,
+input[type="submit"].disabled,
+input[type="submit"]:focus
+{
+  text-align:center;
+  width:auto;
+  box-sizing: border-box;
+  color: @white;
+  font-family: inherit;
+  background: @blue;
+  border-radius: 5px;
+  margin-right: 7px;
+  font-size: @smallFont;
+  line-height: @smallFont + @smallFont/2;
+  border: none;
+  text-shadow: none;
+  padding: 2px 8px;
+  cursor: pointer;
+}
+.btn:hover,
+input[type="submit"]:hover
+{
+  color:@white;
+  background: @mainColor;
+}
+
+
+.format-topics #page-content {
+  padding: 0;
+}
+
+
+.path-manage_profile #page-content{/*убираем лишние 8 пикселей с дашборда*/
+  /*margin: 0 -6px 0 -4px;*/
+}
+
+.table-view #page-content{
+  margin:0 -8px;
+}
+input, button, select, textarea{
+    font-family: Candara, 'Times New Roman',Arial, sans-serif;
+}
+
+.row-fluid {
+  width: auto;
+}
+
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: " ";
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.gridcol1:before,
+.gridcol1:after{
+    display: table;
+    content: " ";
+}
+
+.gridcol1:after{
+    clear: both;
+}
+
+
+.block .content {
+    padding: 0;
+}
+
+
+/* START MODAL */
+.modal-backdrop.fade.in {
+    background: #444444;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+
+
+.generaltable.regionlist tr td a{
+  display: inline-block;
+               &.btn{
+                 line-height: 32px;
+               }
+  
+}
+
+
+.breadcrumb-nav{
+    margin-bottom: 0;
+    display: none;
+}
+.breadcrumb-button{
+    margin-top: 0;
+}
+.breadcrumb-button .singlebutton div{
+    margin-bottom: 0;
+}
+.breadcrumb{
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    background: transparent;
+}
+.breadcrumb li{
+    text-shadow: none;
+}
+.breadcrumb a, .breadcrumb span{
+    color:@white;
+    text-shadow: none;
+}
+
+
+.block, #region-main{
+  background: @blockColor;
+    margin-bottom: 20px;
+    border: none;
+    padding: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+    -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+
+}
+.graph-view #region-main{
+  padding: 0;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+.table-view #region-main{
+  background: transparent;
+}
+
+#region-main{
+    /*padding: 8px 20px;*/
+}
+#region-main{
+   min-height: 300px;
+ }
+#region-main .table{
+  background: none;
+}
+
+#region-main .collapsible{
+    padding-left:15px;
+}
+
+
+
+#page-footer{
+    border-top:none;
+    display: none;
+}
+#page-footer, #page-footer a{
+    color: @white;
+}
+#page-footer a{
+    text-decoration: underline;
+}
+
+
+
+/** Index page **/
+#page-site-index {
+    overflow: hidden;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    touch-action: none;
+}
+
+
+.loginbox h2, .loginbox .subcontent .forgetpass-link{
+  display: block;
+  margin: 10px 0 0 18px;
+}
+
+
+
+
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  /* General */
+  body {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  textarea[cols], input[size] {
+    max-width: 200px;
+  }
+
+  .container-fluid {
+    padding: 0;
+  }
+
+  .block .header h2,
+  .block .content {
+    padding: 3px 0;
+  }
+
+  .block .header h2 {
+    text-shadow: none;
+    padding: 0;
+    font-size: .8em;
+
+  }
+
+  .row-fluid .span3 {
+    width: 26.99%;
+  }
+
+  #block-region-side-post {
+    margin-left: 1%;
+  }
+
+  .row-fluid .span4 {
+    width: 33%;
+  }
+
+  .row-fluid .span9 {
+    width: 72%;
+  }
+
+  .empty-region-side-post.used-region-side-pre #region-main.span8,
+  .jsenabled.docked-region-side-post.used-region-side-pre #region-main.span8 {
+    width: 75%;
+  }
+
+  .empty-region-side-post.used-region-side-pre #block-region-side-pre.span4,
+  .jsenabled.docked-region-side-post.used-region-side-pre #block-region-side-pre.span4 {
+    width: 24%;
+  }
+}
+
+
+
+/* MAX 1200px ) */
+@media (min-width: 980px) and (max-width: 1200px) {
+    body {
+         background: url([[pix:theme|background-xlarge]]) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        background-size: cover;
+        font-family: Candara, 'Times New Roman', Arial, sans-serif;
+        color: @mainColor;
+    }
+
+    textarea[cols], input[size] {
+        max-width: none;
+    }
+}
+
+@media (min-width: 1200px) {
+  .btn,
+  .btn:visited,
+  .btn:active,
+  .btn.active,
+  .btn.disabled,
+  input[type="submit"],
+  input[type="submit"]:visited,
+  input[type="submit"]:active,
+  input[type="submit"].active,
+  input[type="submit"].disabled,
+  input[type="submit"]:focus
+  {
+    font-size: @mainFont;
+    line-height: @mainFont + @mainFont/2;
+  }
+
+  body{
+    font-size: @mainFont;
+  }
+}
+
+

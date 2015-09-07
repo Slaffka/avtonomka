@@ -1,0 +1,1 @@
+<div class="block settinggoals-error">Первый этап ещё не завершен!</div>

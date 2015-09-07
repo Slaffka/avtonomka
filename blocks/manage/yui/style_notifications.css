@@ -1,0 +1,43 @@
+.popover{
+	width:	400px;		
+}
+.scroll_plugin{
+	border-radius: 		10px;
+	position:			absolute;
+	right: 				5px;
+	top: 				0;
+	bottom: 			0;
+	width: 				10px;
+	background-color: 	#d7dce8;
+}
+.bar_plugin{
+	position: 			absolute;
+	top: 				0;
+	width: 				10px;
+	background-color: 	#133063;
+	border-radius: 		10px;
+}
+
+.list_messages_plugin{
+	color: 			black;
+	text-align: 	left;
+	overflow: 		auto;
+	overflow-x: 	hidden;
+	padding-right: 	45px; 
+	margin-right: 	-30px;
+}
+.content_messages_plugin{
+	margin-top:		5px; 
+	overflow:		hidden; 
+	position:		relative;
+}
+
+.message_plugin:first-child{
+	border-top:		solid 1px #4A7EBB;
+}
+
+.message_plugin{
+	border-bottom:	solid 1px #4A7EBB;
+	padding:		10px 5px 10px 0px;
+	font-size:		14px;
+}

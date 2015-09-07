@@ -1,0 +1,141 @@
+.bell .popover{
+	min-width:	350px;	
+	left: -288px;
+}
+.bell .popover .popover-content{
+	padding: 0px 0px;
+}
+
+.bell .popover.bottom .arrow{
+	left:  86%;
+}
+
+.scroll_plugin{
+	border-radius: 		10px;
+	position:			absolute;
+	right: 				0px;
+	top: 				0;
+	bottom: 			0;
+	width: 				8px;
+	background-color: 	#d7dce8;
+}
+.bar_plugin{
+	position: 			absolute;
+	top: 				0;
+	width: 				8px;
+	background-color: 	#133063;
+	border-radius: 		10px;
+}
+
+.list_messages_plugin{
+	margin: 5px 5px 5px 0px;
+	max-height: 	220px;
+	min-width:		350px;
+	color: 			black;
+	text-align: 	left;
+	overflow: 		auto;
+	overflow-x: 	hidden;
+	padding-right: 	45px; 
+	margin-right: 	-30px;
+}
+
+.content_messages_plugin{
+	margin-top:		5px; 
+	overflow:		hidden; 
+	/*position:		relative;*/
+}
+
+.message_plugin:first-child{
+	border-top: solid 1px #C1C4CB;
+}
+.message_plugin{
+	position: relative;
+	border-bottom: solid 1px #C1C4CB;
+	padding-left: 25px;
+	font-size: 14px;
+}
+
+
+a.message_plugin {
+	width: 100%;
+	display: block;
+	color: #C1C4CB;
+}
+
+.message_plugin:before {
+  content: ' ';
+  display: inline-block;
+  vertical-align: middle;
+  width: 3px;
+  height: 30px;
+  margin: 5px 5px 5px -20px;
+}
+
+.message_plugin.info_notification:before {
+  background-color: #5bc0de;
+}
+
+p.empty{
+    font-size: 14px;
+    text-align: center;
+    color: gray;
+    margin-top: 5px;
+}
+
+.message_plugin.success_notification:before {
+	background-color: #5cb85c;
+}
+
+.message_plugin.danger_notification:before {
+	background-color: #d9534f;
+}
+
+.message_plugin.warning_notification:before {
+	background-color: #f0ad4e;
+}
+
+.wait_loader{
+	display: block;
+	margin: 0 auto;
+}
+
+
+/** Подтверждение фото  ***/
+.modal.modal-verifyphoto{
+    position: absolute;
+    display: block;
+    width: 940px;
+    min-height: 300px;
+    margin-left: -470px;
+}
+.modal.modal-verifyphoto .modal-body{
+    overflow: inherit;
+    padding: 0;
+    max-height: 100%;
+    position: initial;
+}
+.modal.modal-verifyphoto .actions{
+	font-size:16px;
+	padding:10px;
+}
+.modal .verifyphoto-container{
+    padding: 10px;
+    margin: 0 auto;
+}
+.modal .verifyphoto-item{
+    float: left;
+    width: 285px;
+    margin-left: 8px;
+    margin-bottom: 8px;
+    border: 1px solid #b2cee7;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+}
+.modal .verifyphoto-item img{
+    max-width: 100%;
+}
+
+@media (min-width: 1200px) {
+
+}

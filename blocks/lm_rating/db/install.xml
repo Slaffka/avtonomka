@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="blocks/lm_rating/db" VERSION="2015040603" COMMENT="XMLDB file for Moodle blocks/lm_rating"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+        >
+    <TABLES>
+        <TABLE NAME="lm_rating_metric" COMMENT="">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+                <FIELD NAME="code" TYPE="char" LENGTH="32" NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="postid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+                <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="weight" TYPE="float" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+                <KEY NAME="metric" TYPE="unique" FIELDS="code" />
+                <KEY NAME="post" TYPE="foreign" FIELDS="post" REFTABLE="lm_post" REFFIELDS="id" />
+            </KEYS>
+        </TABLE>
+
+        <TABLE NAME="lm_rating_metric_value" COMMENT="">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+                <FIELD NAME="metricid" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false"/>
+                <FIELD NAME="posid" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false"/>
+                <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false"/>
+                <FIELD NAME="date" TYPE="datetime" NOTNULL="false" SEQUENCE="false"/>
+                <FIELD NAME="value" TYPE="float" NOTNULL="false" SEQUENCE="false"/>
+                <FIELD NAME="bal" TYPE="float" NOTNULL="false" SEQUENCE="false"/>
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+                <KEY NAME="metric" TYPE="foreign" FIELDS="metricid" REFTABLE="lm_rating_metric" REFFIELDS="id" />
+                <KEY NAME="value" TYPE="unique" FIELDS="metricid,posid,userid,date" />
+            </KEYS>
+        </TABLE>
+
+        <TABLE NAME="lm_rating_metric_param" COMMENT="">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+                <FIELD NAME="metricid" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false"/>
+                <FIELD NAME="code" TYPE="char" LENGTH="32" NOTNULL="false" SEQUENCE="false"/>
+                <FIELD NAME="name" TYPE="char" LENGTH="255"  NOTNULL="true" SEQUENCE="false"/>
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+                <KEY NAME="metric" TYPE="foreign" FIELDS="metricid" REFTABLE="lm_rating_metric" REFFIELDS="id" />
+                <KEY NAME="param" TYPE="unique" FIELDS="code" />
+            </KEYS>
+        </TABLE>
+
+        <TABLE NAME="lm_rating_param_value" COMMENT="">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+                <FIELD NAME="paramid" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false"/>
+                <FIELD NAME="metric_value_id" TYPE="int" LENGTH="10" NOTNULL="false" SEQUENCE="false"/>
+                <FIELD NAME="value" TYPE="float" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+                <KEY NAME="metric_value" TYPE="foreign" FIELDS="metric_value_id" REFTABLE="lm_rating_metric_value" REFFIELDS="id" />
+                <KEY NAME="value" TYPE="unique" FIELDS="param,metric_value_id" />
+            </KEYS>
+        </TABLE>
+    </TABLES>
+</XMLDB>

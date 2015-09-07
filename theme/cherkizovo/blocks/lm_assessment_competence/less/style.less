@@ -1,0 +1,41 @@
+@import "../../../less/variables.less";
+.score-line{
+  line-height: 24px;
+  border-bottom: 1px solid @grey;
+}
+.score-name{
+  float:left;
+  width: 200px;
+  overflow:hidden;
+}
+.score-container{
+  font-family: FontAwesome;
+  position: relative;
+  vertical-align: middle;
+  display: inline-block;
+  color: @grey;
+  overflow: hidden;
+  font-size: @mainFont;
+  float:right;
+  margin-right: 10px;
+}
+.score-container:before{
+  content: "\f005\f005\f005\f005\f005";
+}
+.score {
+  width: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  color: @yellow;
+  transition: all 1.2s ease-out;
+  -o-transition: all 1.2s ease-out;
+  -moz-transition: all 1.2s ease-out;
+  -webkit-transition: all 1.2s ease-out;
+}
+.score:before{
+  content: "\f005\f005\f005\f005\f005";
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.7);
+}

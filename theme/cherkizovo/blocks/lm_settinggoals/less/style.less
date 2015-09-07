@@ -1,0 +1,534 @@
+@import "../../../less/variables.less";
+@import "../../../less/mixins.less";
+
+#page-lm-settinggoals-index-ra .block, #region-main {
+  background: rgba(255, 255, 255, 0);
+}
+.block.settinggoals-error {
+    text-align: center;
+    color: red;
+    font-size: 18px;
+    line-height: 40px;
+}
+.settinggoals-timer {
+  background-color: #ffffff;
+  width: 281px;
+  font-size: 18px;
+  display: inline-block;
+  padding: 15px 3px;
+  height: 20px;
+  color: #0d316e;
+}
+.settinggoals-timer.timeout {
+  color: #FF0000;
+}
+.settinggoals-timer-hours,
+.settinggoals-timer-minutes {
+  font-size: 38px;
+  display: inline-block;
+  padding: 15px 5px;
+  margin: -15px 0px;
+  width: 35px;
+  text-align: center;
+}
+.settinggoals-timer-delimiter {
+  width: 5px;
+  display: inline-block;
+}
+
+.settinggoals-pennant.top {
+  background-image: url('/blocks/lm_settinggoals/img/best_flag.png');
+  color: #f8c155;
+}
+.settinggoals-pennant {
+  position: absolute;
+  top: 33%;
+  float: left;
+  background-image: url('/blocks/lm_settinggoals/img/flag.png');
+  background-repeat: no-repeat;
+  width: 92px;
+  height: 90px;
+  margin-left: -13px;
+  font-size: 30px;
+  color: #000000;
+}
+.settinggoals-pennant span {
+  margin-top: 29px;
+  display: block;
+  margin-left: 32px;
+}
+
+.path-lm_settinggoals table {
+  border: 0;
+  border-spacing: 1px 1px;
+  text-shadow: 0.1px 0.1px 0 #0d316e;
+
+  th {
+    vertical-align: middle;
+    height: 55px;
+    background: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    padding: 0;
+  }
+  tr.less_details td.more {
+    padding-left: 10px;
+    text-align: left;
+  }
+  td {
+    vertical-align: middle;
+    height: 55px;
+    text-align: center;
+    padding: 0;
+  }
+  tr {
+    background: @tableTrEven;
+  }
+
+  tr.fact {
+    background: @tableTrOdd;
+  }
+
+  tr.less_details td {
+    background: rgba(255, 255, 255, 0.9);
+  }
+  td.username {
+    text-align: left;
+    width: 25%;
+    padding-left: 10px;
+    background: @tableTrOdd;
+  }
+  td.username .userpicture {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+}
+
+.settinggoals_checkbox_kpi_count_chekbox {
+  display:inline-block;
+  width:26px;
+  height:23px;
+  margin:-1px 4px 0 15px;
+  vertical-align:middle;
+  cursor:pointer;
+}
+.settinggoals_checkbox_kpi_count_chekbox_checked {
+  background:url(/blocks/lm_settinggoals/img/check_sheet.png) left top no-repeat;
+}
+.settinggoals_checkbox_kpi_count_chekbox_unchecked {
+  background:url(/blocks/lm_settinggoals/img/check_sheet.png) -26px top no-repeat;
+}
+
+
+.username .blockusername {
+  position: relative;
+  height: 100%;
+  min-width: 100px;
+}
+.username .fio {
+  position: absolute;
+  top: 40%;
+  float: left;
+  margin-left: 72px;
+}
+.username .ava {
+  position: absolute;
+}
+.username .userfio {
+  position: absolute;
+  margin-left: 61px;
+  min-width: 90px;
+}
+.username .more{
+  position: absolute;
+  bottom: 3px;
+  right: 5px;
+  font-size:14px;
+}
+.username .more a {
+  border-bottom: 1px dashed #1f497d;
+}
+.username .more a:hover{
+  border-bottom: 0 dashed #1f497d;
+  text-decoration: none;
+}
+
+.path-lm_settinggoals table td, .path-lm_settinggoals table th {
+  border: 0 ;
+}
+
+.less-details {
+  border-bottom: 1px dashed #1f497d;
+}
+.path-lm_settinggoals table tr.space {
+  height: 2px;
+  background: transparent !important;
+}
+.path-lm_settinggoals table tr.space td {
+  height: 2px;
+}
+.path-lm_settinggoals table tr.dark{
+  background: @TDDark;
+}
+.table-settinggoals td.dark {
+  background: @TDDark;
+}
+.table-settinggoals tr.color-transparent {
+  background: transparent;
+}
+.table-settinggoals tr.color-transparent td.user {
+  text-align: left;
+  padding-left: 6px;
+  position: relative;
+}
+.table-settinggoals tr.color-transparent td.user .ava {
+  float: left;
+  margin-right: 10px;
+  margin-left: 5px;
+}
+.table-settinggoals tr.color-transparent td.user .userfio {
+  min-width: 100px;
+  max-width: 240px;
+}
+.table-settinggoals tr.color-transparent td.user .auto {
+  top: 20px;
+  position: absolute;
+  right: 13px;
+}
+// Комментирование плана
+#lm_settinggoals_plan_comments {
+  position: absolute;
+  right: 0;
+  border-radius: 5px;
+  background: fade(@blue, 80%);
+  height: 500px;
+  overflow: hidden;
+}
+
+#lm_settinggoals_plan_comments.open {
+  #lm_settinggoals_plan_comments-window {
+    width: 350px;
+  }
+  .show-hide:before {
+    .rotate(-180deg);
+  }
+  .show-hide:after {
+    .rotate(180deg);
+  }
+}
+
+#lm_settinggoals_plan_comments-toggle {
+  color: @white;
+  cursor: pointer;
+  float: left;
+  text-align: center;
+  height: 100%;
+  width: 50px;
+  border-right: solid 1px #6887A4;
+  white-space: nowrap;
+
+  .show-hide {
+    display: inline-block;
+    vertical-align: middle;
+    margin: -999px;
+    font-size: 20px;
+    .rotate(-90deg);
+  }
+  .show-hide:before, .show-hide:after {
+    font-family: 'tibiicons';
+    content: '\e620';
+    display: inline-block;
+    .transition(all 200ms ease 100ms);
+  }
+
+  .show, .hide {
+    display: inline-block;
+    min-width: 250px;
+  }
+
+  &:hover {
+    background: fade(@blue, 70%);
+  }
+
+  &:after {
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+    width: 0;
+    content: " ";
+  }
+
+}
+
+#lm_settinggoals_plan_comments-toggle .hide,
+#lm_settinggoals_plan_comments.open #lm_settinggoals_plan_comments-toggle .show {
+  display: none;
+}
+
+#lm_settinggoals_plan_comments.open #lm_settinggoals_plan_comments-toggle .hide {
+  display: inline-block;
+}
+
+#lm_settinggoals_plan_comments-window {
+  width: 0;
+  height: 100%;
+  transition: width 150ms ease;
+}
+
+#lm_settinggoals_plan_comments-comments {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+#lm_settinggoals_plan_comments-list {
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.lm_settinggoals_plan_comments-comment {
+  position: relative;
+  color:@white;
+  text-align: left;
+  background-color: @mainColor;
+  margin: 20px 10px;
+  padding: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  .border-radius(5px);
+
+  textarea {
+    font-family: Candara,'Times New Roman',Arial,sans-serif;
+    color: @black;
+    width: 100%;
+    height: 70px;
+    resize: none;
+    .box-sizing(border-box);
+  }
+
+  &:after {
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 100%;
+    left: 20px;
+    border-top: solid 7px @mainColor;
+    border-right: solid 15px transparent;
+    .skew(-10deg, 0);
+  }
+
+  #lm_settinggoals_plan_comments-new & {
+    margin: 10px 10px 20px;
+  }
+  #lm_settinggoals_plan_comments-new &:after {
+    left: auto;
+    right: 20px;
+    border-top: solid 7px @mainColor;
+    border-right: none;
+    border-left: solid 15px transparent;
+    .skew(10deg, 0);
+  }
+}
+
+#lm_settinggoals_plan_comments-new {
+  overflow: hidden;
+  position: relative;
+
+  #lm_settinggoals_plan_comments-loading {
+    display: none;
+    position: absolute;
+    top: 0;
+    padding: 50px 50%;
+    margin: 0 -33px;
+  }
+  &.loading #lm_settinggoals_plan_comments-loading {
+    display: block;
+  }
+}
+
+#lm_settinggoals_plan_comments-add {
+  color: @white;
+  background-color: @blue;
+  font-size: 16px;
+  padding: 10px 30px;
+  margin: 20px auto;
+}
+/* Start Рейтинг */
+td.critical_gradient{
+  background: #fe2b2b;
+  /*background: linear-gradient(to left, #FFFFFF, #fe2b2b 10%);*/
+}
+td.normal_gradient {
+  background: #f0c820;
+  /*background: linear-gradient(to left, #FFFFFF, #f0c820 10%);*/
+}
+td.perfectly_gradient {
+  background: #70b12e;
+}
+td.critical, th.critical{
+  background: #fdcbcb !important;
+}
+td.normal {
+
+}
+td.perfectly, th.perfectly {
+  background: #bde890 !important;
+}
+
+th.kpi {
+  position: relative;
+
+  i.kpi-info {
+    cursor: help;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    font-size: 16px;
+    font-style: normal;
+    text-align: center;
+    background: @blueLight;
+    color: @white;
+    .border-radius(50%);
+  }
+  .tooltip {
+    pointer-events: none;
+    font-size: 16px;
+    .opacity(1);
+
+    .tooltip-arrow {
+      border-bottom-color: @blueLight;
+    }
+    .tooltip-inner {
+      color: black;
+      padding: 5px;
+      background: @blueLight;
+    }
+  }
+}
+
+.table-settinggoals th.level2, .table-settinggoals td.level2 {
+  border-radius: 0;
+  text-align: left;
+  padding-left:15px;
+}
+.table-settinggoals .radius0{
+  border-radius: 0;
+}
+
+.rating-up {
+  float: right;
+  margin: 7px 14px 0px -28px;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 10px solid #3cc011;
+}
+.rating-down {
+  float: right;
+  margin: 7px 14px 0px -28px;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 10px solid #ff353d;
+}
+.rating-stop {
+  float: right;
+  margin: 7px 14px 0px -28px;
+  width: 15px;
+  height: 3px;
+  background: #ffcb05;
+  position: relative;
+  top: 3px;
+  left: 3px;
+}
+/* End Рейтинг */
+
+/* Start Modal */
+.modal-window {
+  padding: 8px;
+}
+.modal-window .title {
+  font-size: 18px;
+  float: left;
+}
+.modal-window .section {
+  font-size: 18px;
+  float: right;
+}
+.modal-window ul{
+  margin-top:40px;
+}
+.modal-window .section .close-modal, .modal-window .footer .submit {
+  font-size: 18px;
+}
+.modal-window .section .close-modal, .modal-window .footer .text{
+  color: #0d316e;
+  border-bottom: 1px dashed #88BBF5;
+}
+.modal-window .section .close-modal:hover, .modal-window .footer .submit:hover{
+  border-bottom: 0;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal-window .content {
+  margin-top: 30px;
+}
+.modal-window .footer {
+  text-align: center;
+  margin-top: 40px;
+}
+.modal-window table.edit-kpi td{
+  height: 40px;
+}
+.modal-window table.edit-kpi .left{
+  text-align: right;
+}
+.modal-window table.edit-kpi .right{
+  text-align: left;
+}
+.modal-window input{
+  border-color: #99bbe6;
+  width: 80px;
+  text-align: center;
+  margin-bottom: 0;
+}
+.modal-window table.edited-kpi {
+  margin-top: 10px;
+  border-collapse: collapse;
+  border: 1px solid rgba(186,211, 233, 0.9);
+}
+.modal-window .edited-kpi th, .modal-window .edited-kpi td  {
+  border: solid 1px rgba(186,211, 233, 0.9);
+}
+.modal-window .edited-kpi td {
+  background: #eaf0fb;
+  border-top: 1px solid white;
+}
+/* End Modal */
+
+/* outlet_list */
+.outlets-list tr:nth-child(even) {
+  background: #eaf0fb;
+}
+.outlets-list td:hover {
+  cursor: pointer;
+  background: rgb(226, 233, 245);
+}
+.outlets-list td.active {
+  background: #0d316e;
+  color:white;
+}
+.cb_outlet{
+  display: none;
+}
+
+/* START PAGINATION */
+.path-lm_settinggoals .pagination {
+  display: inline-block;
+}
+/* END PAGINATION */

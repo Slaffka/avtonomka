@@ -1,0 +1,12 @@
+@import "tibiicons/style.css";
+
+@font-face {
+    font-family: 'Candara';
+    src:url('candara/Candara.eot?f5rrsc');
+    src:url('candara/Candara.eot?#iefixf5rrsc') format('embedded-opentype'),
+    url('candara/Candara.woff?f5rrsc') format('woff'),
+    url('candara/Candara.ttf?f5rrsc') format('truetype'),
+    url('candara/Candara.svg?f5rrsc#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

@@ -1,0 +1,200 @@
+/* Height */
+#page{
+    height: 90%; /*чтобы не было полосы прокрутки*/
+}
+
+#page-content{
+  padding: 0 @pageContentPadding;
+}
+
+#page-content,
+#page .gridcol1{
+    height: 100%;
+}
+
+/** Layouts **/
+.pagelayout-grid {
+  .gridcol1 {
+    display: block;
+    width: auto;
+    box-sizing: border-box;
+    min-height: 100px;
+  }
+
+  .gridcol1 > .block {
+    float: left;
+    height: 32.4%;
+    width: 100%;
+    /*min-height: 220px;*/
+    color: @mainColor;
+    margin: 0 0 8px 0;
+    box-sizing: border-box;
+
+    .content {
+      width: 100%;
+    }
+  }
+
+  .block-hider-hide, /** Скрываем лишние контролы (свернуть и переместить в док) **/
+  .block-hider-show,
+  .customcommand,
+  .skip-block-to, /** А также кнопки между блоками, которые мешают сетке **/
+  .skip-block {
+    display: none;
+  }
+
+  .block-control-actions {
+    /** Двигаем оставшиеся контролы в нужно место **/
+    margin-top: -20px;
+    position: relative;
+    top: -8px;
+  }
+
+  .block {
+    font-size: 0.9em;
+    line-height: 1.2em;
+    text-align: center;
+
+    .header {
+      h2 {
+        color: @mainColor;
+        font-size: @smallFont;
+        text-align: left;
+        font-weight: normal;
+        position: relative;
+        top: -4px;
+      }
+      .commands {
+        padding: 0;
+        clear: none;
+      }
+    }
+
+    .content {
+      font-size: @smallFont
+    }
+
+    a{
+      color: @mainColor;
+    }
+
+  }
+}
+
+@media (max-width: 767px) {
+  .pagelayout-grid{
+    .gridcol1{
+      width: 100%;
+      float: left; /** Если убрать, то проблема в режиме редактирования с менюшкой настроек блока **/
+    }
+    .gridcol1 > .block {
+      /* Расположим блоки плиткой, все элементы должны помещаться на 1 экран */
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .pagelayout-grid .gridcol1 > .block {
+    width: 49%;
+    margin: 0 @blockMargin/2 @blockMargin @blockMargin/2;
+  }
+}
+
+@media (min-width: 960px) {
+  .pagelayout-grid{
+    .gridcol1 {
+      color:#233981;
+      text-align: right;
+    }
+
+    .gridcol1 > .block {
+      /* Расположим блоки плиткой, все элементы должны помещаться на 1 экран */
+      width: 32.67%;
+      margin: 0 @blockMargin/2 @blockMargin @blockMargin/2;
+    }
+
+    .gridcol2, .gridcol3 {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  #page-content{
+    padding: 0 20px;
+  }
+
+  .pagelayout-grid .gridcol1 > .block {
+    /* Расположим блоки плиткой, все элементы должны помещаться на 1 экран */
+    width: 32.6%;
+    margin: 0 (@blockMargin+2)/2 (@blockMargin+2) (@blockMargin+2)/2;
+  }
+}
+
+@media (min-width: 1400px) {
+  .pagelayout-grid .gridcol1 > .block {
+    width: 32.74%;
+  }
+}
+@media (min-width: 1700px) {
+  .pagelayout-grid .gridcol1 > .block {
+    width: 32.83%;
+  }
+}
+
+
+
+
+@media (min-height: 650px) {
+  #page {
+    height: 88%;
+  }
+  .pagelayout-grid .gridcol1 > .block {
+    min-height: 130px;
+  }
+}
+
+@media (min-height: 750px) {
+  #page {
+    height: 90%;
+
+  }
+}
+
+@media (min-height: 855px) {
+    .pagelayout-grid .gridcol1 > .block {
+        height: 32.7%;
+    }
+}
+
+@media (min-height: 925px) {
+    .pagelayout-grid .gridcol1 > .block {
+        height: 33%;
+    }
+}
+
+@media (min-height: 1000px) {
+    .pagelayout-grid .gridcol1 > .block {
+        height: 33.3%;
+    }
+}
+
+@media (max-height: 799px) {
+    .pagelayout-grid .gridcol1 > .block {
+        height: 32%;
+    }
+}
+
+
+@media print {
+    .pagelayout-grid .gridcol1 > .block {
+        float: left;
+        height: 250px !important;
+        width: 32.2%;
+    }
+   body {
+     overflow: hidden;
+   }
+}

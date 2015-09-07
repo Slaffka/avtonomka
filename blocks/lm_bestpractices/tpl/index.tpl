@@ -1,0 +1,1 @@
+{include './subpages/bank_practices.tpl'}

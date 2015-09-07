@@ -1,0 +1,359 @@
+@import "../../../less/variables.less";
+
+#loadImg {
+  position:absolute;
+  z-index:1000;
+  display:none;
+}
+.widget_no_tma{
+  font-size: @smallFont;
+  font-weight: normal;
+  position: absolute;
+  top: 42%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+.block_lm_tma {
+  position: relative;
+}
+table.tma {
+  border-radius: 6px;
+  border-left: 1px solid #ddd;
+}
+.tma tr.title{
+  background: #bad3e9 !important;
+}
+.tma tr {
+  height: 55px;
+}
+table.tma tr.title td {
+  vertical-align: middle;
+}
+table.tma tr.title td:last-child {
+  border-top-right-radius: 6px !important;
+}
+table.tma tr.title td:first-child {
+  border-top-left-radius: 6px !important;
+}
+table.tma tr td:last-child {
+  border-right: 0 solid #c2c4cb;
+}
+.spoiler_body {
+  display:none;
+}
+.spoiler_link {
+  float: right;
+  cursor:pointer;
+  font-weight:bold;
+  text-decoration:underline;
+}
+
+td.action {
+  text-align: left !important;
+  vertical-align: top !important;
+  padding-top: 4px ;
+  padding-left: 10px ;
+  margin: 0;
+}
+td.action .title_action {
+  font-size:22px;
+}
+td.action .descr_action {
+  font-size: 14px;
+  margin-left: 15px;
+  margin-top: 10px;
+}
+table.tma .time .spoiler_body_hide p {
+  font-size: 18px;
+  text-shadow: 0.1px 0.1px 0.1px rgb(13, 49, 110);
+}
+table.tma .time .spoiler_body .title {
+  font-size: 32px;
+  font-weight: bold;
+}
+table.tma .time .spoiler_body .descr {
+  font-size: 26px;
+  font-weight: bold;
+}
+table.tma .time .spoiler_body .caption{
+  color: #0d316e;
+  font-size: 14px;
+}
+table.tma .time .spoiler_body .caption span{
+  margin-left: 36px;
+}
+
+table.tma div.timer {
+  border: solid 1px #bad3e9;
+  padding: 2px 4px 2px 4px;
+  margin-left: 1px;
+  width: 20px;
+  height: 35px;
+  display: inline-block;
+  font-size: 38px;
+  font-weight: bold;
+  line-height: 30px;
+}
+
+/* Progress */
+
+table.tma .meter {
+  float: left;
+  width: 225px;
+  height: 20px;
+  position: relative;
+  background: #bad3e9;
+}
+table.tma .meter > span {
+  display: block;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  background: #0d316e;
+}
+table.tma .meter > span:after, .animate > span > span {
+  content: "";
+  position: absolute;
+  overflow: hidden;
+  -webkit-animation: move 2s linear infinite;
+  -moz-animation: move 2s linear infinite;
+}
+
+
+@-webkit-keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}
+
+@-moz-keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}
+
+.nostripes > span > span, .nostripes > span:after {
+  -webkit-animation: none;
+  -moz-animation: none;
+  background-image: none;
+}
+
+table.tma .result-percent {
+  float: right;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes animated_result {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+@keyframes animated_result {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+table.tma td .animated_result {
+  -webkit-animation-name: animated_result;
+  animation-name: animated_result;
+}
+
+.money_tma {
+  background-position: center;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+.money_tma_white{
+  background: url(/blocks/lm_tma/img/money_white.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.money_tma_sprites{
+  background: url(/blocks/lm_tma/img/money_sprites.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.editing.active {
+  border: dashed 2px silver;
+  padding: 6px;
+}
+.rewardactive {
+  width: 30px;
+}
+.tma .editableform textarea {
+  width:350px;
+  height: 70px;
+}
+
+
+
+
+.svg.radial-progress {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+}
+
+.svg svg {
+  transform: rotate(135deg);
+}
+
+circle {
+  stroke-width: 6px;
+  fill: transparent;
+  transform: rotate(0.1deg); // to fix Firefox
+}
+
+.radial-progress-background {
+  stroke: #0d316e;
+}
+
+.radial-progress-cover {
+  stroke: #bad3e9;
+  stroke-width: 7px;
+  border: 5px solid red;
+}
+
+.radial-progress-center {
+  fill: transparent;
+}
+
+.radial-fill {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+tr:nth-child(even) p {
+  background: rgb(233, 239, 247);
+}
+tr:nth-child(odd) p {
+  background: white;
+}
+
+.block_lm_tma .content {
+  position: relative;
+  height: 100%;
+  margin-top: -10px !important;
+}
+.tma_list {
+  position: absolute;
+  top: -13px;
+  right: 0;
+}
+.tma_list .tma_item {
+  width:6px;
+  height: 6px;
+  border-radius: 10px;
+  border:solid 1px #bad3e9;
+  display: block;
+}
+.tma_list li {
+  display: inline-block;
+  padding: 3px;
+}
+.tma_list li span {
+  background-color: #bad3e9;
+}
+.tma_list li span.active {
+  background-color: #134c9b;
+  border:solid 1px #134c9b;
+}
+table.tma .reward_action{
+  font-size: 48px;
+  font-weight: bold;
+  margin-top:auto;
+}
+table.tma .act a {
+   margin-right: 0;
+}
+.chart-wave-caption {
+  font-size: 24px;
+  fill: #0d316e;
+}
+
+.chart-wave-value {
+  display: none;
+}
+
+.block_lm_tma .chart-wave-title {
+  font-size: 20px;
+}
+
+.block_lm_tma .chart-wave-total {
+  font-size: 22px;
+  fill: #0d316e;
+}
+.block_lm_tma .chart-wave-unit {
+  font-size: 20px;
+}
+
+.block_lm_tma .wave {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  height: 100%;
+  width: 92%;
+}
+.block_lm_tma .pig{
+  position: absolute;
+  left: 52px;
+  width: 75px;
+  min-width: 55px;
+  max-width: 90px;
+}
+.block_lm_tma .body {
+  position: relative;
+
+  height: 95%;
+}
+.block_lm_tma .prev {
+  position: absolute;
+  left: 0;
+  top: 44%;
+}
+.block_lm_tma .next {
+  position: absolute;
+  right: 0;
+  top: 44%;
+}
+@media (min-width: 1200px) {
+  .widget_no_tma{
+    font-size: @mainFont;
+  }
+}
+@media  screen and  (max-height: 800px) {
+  .pagelayout-grid .block_lm_tma {
+    .header h2 {
+      font-size: 14px;
+    }
+    .chart-wave-caption {
+      font-size: 18px;
+      fill: #0d316e;
+    }
+    .pig {
+      width: 42px;
+      left: 58px;
+      min-width: 42px;
+      max-width: 90px;
+    }
+    .chart-wave-total-value {
+      font-size: 20px !important;
+      fill: #0d316e;
+    }
+    .chart-wave-unit {
+      font-size: 16px;
+    }
+  }
+}

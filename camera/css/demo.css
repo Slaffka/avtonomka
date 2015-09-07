@@ -1,0 +1,140 @@
+.hide{
+	display: none;
+}
+
+.snapshot-master{
+	margin:0 auto;
+	width: 320px;
+	position: relative;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+#takeSnapshot,
+.fileinput-button,
+.save-button{
+	position: absolute;
+	background-color: rgba(255, 255, 255, 0.5);
+	padding: 10px;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	font-size: 32px;
+	cursor: pointer;
+	z-index: 9999;
+	top: 5px;
+	right: 5px;
+	border: 1px solid #ddd;
+}
+.save-button{
+	right: 80px;
+}
+#takeSnapshot .icon-photo,
+.fileinput-button,
+.save-button{
+	line-height: 33px;
+}
+#takeSnapshot .icon-sync,
+.fileinput-button{
+	line-height: 40px;
+}
+.mobile #takeSnapshot,
+.mobile .fileinput-button,
+.mobile .save-button{
+	cursor: none; /* Предотвращаем появление синего выделения при нажатии на кнопку */
+}
+#takeSnapshot:hover,
+.fileinput-button:hover,
+.save-button:hover{
+	background-color: rgba(255, 255, 255, 0.7);
+}
+#takeSnapshot:active,
+.fileinput-button:active,
+.save-button:active{
+	background-color: rgba(255, 255, 255, 1);
+}
+
+
+
+
+#webcam{
+	background:#eee;
+}
+#webcam, #canvas {
+	overflow:hidden;
+	margin:0 auto;
+}
+#flash {
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:5000;
+	width:100%;
+	height:500px;
+	background-color:#c00;
+	display:none;
+}
+
+object {
+	display:block;
+	position:relative;
+	z-index:1000;
+}
+
+
+
+
+
+
+/* Далее стили для тех мобильных устройств, на которых не поддерживается захват видео */
+.snapshot-imitation{
+	width: 320px;
+	height: 240px;
+	position: relative;
+	background-color: #eee;
+}
+
+.no-getusermedia-mobile #webcam,
+.no-getusermedia-mobile #takeSnapshot{
+	display: none;
+}
+.no-getusermedia-mobile .preloader img{
+	margin: 0 auto;
+	height: 66px;
+	width: 66px;
+	display: block;
+	padding-top: 90px;
+	margin-bottom: -156px;
+	position: relative;
+	z-index: 9999;
+}
+.no-getusermedia-mobile .snapshot-imitation{
+	display: block;
+}
+.snapshot-hint{
+	font-size: 27px;
+	color: #777;
+	text-align: center;
+	padding-top: 90px;
+}
+
+
+.fileinput-button {
+	/*position: relative;*/
+	overflow: hidden;
+}
+.fileinput-button input {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	opacity: 0;
+	-ms-filter: 'alpha(opacity=0)';
+	font-size: 200px;
+	direction: ltr;
+	cursor: pointer;
+}

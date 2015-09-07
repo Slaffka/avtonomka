@@ -1,0 +1,391 @@
+
+.right-menu-inner{
+  float: right;
+  width:35%;
+}
+.lm-subnav{
+  width: 60%;
+}
+
+
+.navbar {
+  margin: 0;
+  padding: 0 20px;
+
+}
+
+.navbar .navbar-inner {
+  background-image: none;
+  /*Прозрачная шапка*/
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  height: auto;
+}
+
+.navbar .navbar-inner > .container-fluid {
+  padding: 0 5px;
+  /* Прозрачная шапка */
+  background: transparent;
+}
+
+.navbar .brand {
+  background: url([[pix:theme|logo]]) no-repeat;
+  /*background-size: contain;*/
+  width: 46px;
+  padding: 0;
+  margin: 5px 5px 5px 0;
+  height:38px;
+  z-index: 1;
+}
+
+nav ul {
+  margin: 0;
+}
+
+.lm-subnav, .lm-subnav ul {
+  float: left;
+}
+
+
+.lm-subnav ul li {
+  float: left;
+  display: inline-block;
+  color: @white;
+  padding: 1px 10px;
+  line-height: 40px;
+  position: relative;
+}
+
+.lm-subnav ul li a {
+  text-decoration: none;
+}
+
+.lm-subnav ul li a:hover {
+  border-bottom: 2px solid @blueLight;
+  padding: 6px 0;
+}
+
+
+.item-current {
+  border-bottom: 2px solid @blueLight;
+  padding: 6px 0;
+}
+
+.lm-subnav a {
+  color: @white;
+}
+
+.lm-subnav .lm-subnav-back{
+
+
+  .icon-chevron-left{
+    height: 26px;
+    width: 20px;
+    font-size: 21px;
+    vertical-align: middle;
+  }
+
+}
+
+
+/*
+
+.more-item:after{
+content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  vertical-align: top;
+  border-top: 4px solid @white;
+  position: relative;
+  top: 17px;
+  left: 10px;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+.menu-responsive{
+  display:none;
+  width: auto;
+  text-align: left;
+  border: 1px solid @white;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  position: absolute;
+  top: 50px;
+  left:15px;
+  z-index: 1000;
+
+}
+.menu-responsive:after{
+  content: '';
+  display: inline-block;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid @white;
+  position: absolute;
+  top: -7px;
+  left:14px;
+}
+*/
+.lm-subnav .lm-subnav-items .dropdown .caret{
+  border-top-color: white;
+  vertical-align: middle;
+  margin-top: 0;
+}
+
+.lm-subnav ul ul li{
+  background: @white;
+  display:block;
+  float:none;
+  border-bottom: 1px solid #ddd;
+  padding: 5px 0px;
+}
+.lm-subnav ul ul li a{
+  color:@black;
+  display: block;
+  padding: 0px 20px;
+  line-height: 30px;
+  white-space: nowrap;
+}
+.lm-subnav ul ul li a:hover{
+  border-bottom: none;
+  padding: 0 20px;
+  background: @mainColor;
+  color:@white;
+
+}
+.lm-subnav ul ul li:last-child {
+  border-bottom: none;
+}
+
+.lm-subnav ul li a.more-item:hover .menu-responsive{
+  display: block;
+}
+
+
+
+
+.right-menu {
+  margin: 0 10px 0 0;
+  float: right;
+}
+
+.right-menu > li {
+  float: left;
+  list-style: none;
+  line-height: 20px;
+}
+
+.bell {
+  position: relative;
+  right: 4px;
+  top: -1px;
+  color: @white;
+  height: 40px;
+
+
+}
+
+.bell .icon-bell {
+  font-size: 38px;
+  position: relative;
+  margin-right: 27px;
+  width: auto;
+  height: auto;
+}
+
+.alert-menu {
+  line-height: 14px;
+  display: inline-block;
+  text-align: center;
+  width: 25px;
+  height: 18px;
+  border-radius: 3px;
+  background: @red;
+}
+
+.alert-right {
+  line-height: 16px;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  width: 25px;
+  height: 18px;
+  border-radius: 3px;
+  background: @red;
+  color: @white;
+  float: right;
+  font-size: @mainFont;
+  top: 4px;
+}
+
+.block .header .block_action {
+  /*место для алерта*/
+  float: none;
+  padding: 0;
+}
+
+.bell .alert-menu {
+  position: absolute;
+  left: 18px;
+  top: 16px;
+}
+
+.menu li {
+  float: none;
+}
+
+.usermenu .login {
+  line-height: 50px;
+}
+
+.usermenu .login .loginurl {
+  color: @white;
+  font-size: 14px;
+  display: block;
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.usermenu .login .loginurl:hover {
+  color: @white;
+}
+
+.usermenu .loginurl .icon-lock {
+  color: rgba(242, 147, 0, 1);
+  font-size: 20px;
+  margin-top: -2px;
+  display: inline-block;
+  height: 100%;
+  width: 22px;
+  text-decoration: none;
+}
+
+.usermenu .moodle-actionmenu .toggle-display .userbutton .usertext {
+  color: @white;
+  text-align: center;
+  margin-right: 5px;
+  margin-top: -2px;
+}
+
+.jsenabled .usermenu .moodle-actionmenu.show {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.jsenabled .usermenu .moodle-actionmenu .toggle-display .caret {
+  display: none;
+}
+
+.usermenu .moodle-actionmenu .toggle-display .userbutton .usertext {
+  display: none;
+}
+
+.dir-ltr .usermenu {
+  float: right;
+  max-width: 500px;
+  margin-right: 15px;
+}
+
+.jsenabled .usermenu .moodle-actionmenu.show .menu.align-tr-br {
+  /*дроп-меню*/
+  margin-right: 15px;
+}
+.bt-menu ul li a .bt-icon.icon-podium:before {/*выравнивание иконки*/
+  position: relative;
+  top: -7px;
+}
+
+@media (min-width: 768px) {
+  .usermenu .moodle-actionmenu .toggle-display .userbutton .usertext {
+    display: inline-block;
+  }
+
+  .usermenu .moodle-actionmenu .toggle-display .userbutton .usertext {
+    color: @white;
+    text-align: right;
+  }
+
+  .lm-subnav {
+    width: 50%;
+  }
+
+  .right-menu-inner {
+    width: 43%;
+  }
+
+  .lm-subnav .lm-subnav-back {
+    margin-right: 0;
+  }
+}
+.usermenu .moodle-actionmenu .toggle-display .userbutton .avatars{
+  width: 40px;
+  height: 40px;
+}
+
+
+.userloggedinas .usermenu .userbutton .avatars .avatar img{
+  width: 40px;
+  height: 40px;
+}
+
+
+@media (min-width: 850px) {
+  .lm-subnav{
+    width: 50%;
+  }
+  .right-menu-inner{
+    width:40%;
+  }
+}
+
+
+@media (min-width: 960px) {
+  .navbar .brand {
+    margin: 5px 5px 5px 0;
+    height:38px;
+  }
+
+  .lm-subnav ul li {
+    padding: 1px 10px;
+  }
+
+  .dir-ltr .usermenu {
+    margin-right: 15px;
+  }
+  .lm-subnav{
+    width: 54%;
+  }
+  .right-menu-inner{
+    width:40%;
+  }
+
+}
+
+
+
+
+
+@media (min-width: 1200px) {
+
+  .lm-subnav{
+    width: 61%;
+  }
+  .right-menu-inner{
+    width:32%;
+  }
+
+  .navbar .brand {
+    margin: 15px 0 0 0;
+    height:44px;
+  }
+
+  .lm-subnav ul li {
+    padding: 14px 20px;
+  }
+
+  .right-menu {
+    margin: 14px 25px 0 0;
+  }
+}

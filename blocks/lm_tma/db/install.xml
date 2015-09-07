@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="blocks/lm_tma/db" VERSION="2015071303" COMMENT="XMLDB file for Moodle blocks/lm_tma"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+        >
+    <TABLES>
+        <TABLE NAME="lm_tma" COMMENT="" NEXT="lm_tma_area">
+            <FIELDS>
+                <FIELD NAME="id"      TYPE="int"  LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+                <FIELD NAME="code"    TYPE="char" LENGTH="32" NOTNULL="true" SEQUENCE="false"/>
+                <FIELD NAME="reward"  TYPE="int"  LENGTH="10" NOTNULL="true"  DEFAULT="0" SEQUENCE="false"/>
+                <FIELD NAME="start"   TYPE="datetime" NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="end"     TYPE="datetime" NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="descr"   TYPE="text" LENGTH="1500"  NOTNULL="true"  DEFAULT="0" SEQUENCE="false"/>
+                <FIELD NAME="title"   TYPE="char" LENGTH="255"  NOTNULL="true"  DEFAULT="0" SEQUENCE="false"/>
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+                <!--KEY NAME="code" TYPE="index" FIELDS="code"/-->
+            </KEYS>
+        </TABLE>
+
+        <TABLE NAME="lm_tma_area" COMMENT="" NEXT="lm_tma_results">
+            <FIELDS>
+                <FIELD NAME="tmaid"  TYPE="int"  LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+                <FIELD NAME="areaid" TYPE="int"  LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+                <FIELD NAME="toid"   TYPE="int"  LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="tma" TYPE="foreign" FIELDS="tmaid"  REFTABLE="lm_tma" REFFIELDS="id" />
+                <KEY NAME="tma" TYPE="foreign" FIELDS="areaid" REFTABLE="lm_tma_area" REFFIELDS="id" />
+                <KEY NAME="tma" TYPE="foreign" FIELDS="toid"   REFTABLE="lm_trade_outlets" REFFIELDS="id" />
+            </KEYS>
+        </TABLE>
+
+        <TABLE NAME="lm_tma_results" COMMENT="">
+            <FIELDS>
+                <FIELD NAME="id"        TYPE="int" LENGTH="10" NOTNULL="true"  SEQUENCE="true"/>
+                <FIELD NAME="tmaid"     TYPE="int" LENGTH="10" NOTNULL="true"  SEQUENCE="false"/>
+                <FIELD NAME="posxrefid" TYPE="int" LENGTH="10" NOTNULL="true"  DEFAULT="0" SEQUENCE="false" />
+                <FIELD NAME="plan"      TYPE="int"  LENGTH="10" NOTNULL="true"  DEFAULT="0" SEQUENCE="false"/>
+                <FIELD NAME="fact"      TYPE="int" LENGTH="10" NOTNULL="false" DEFAULT="0" SEQUENCE="false"/>
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary"  TYPE="primary" FIELDS="id"/>
+                <KEY NAME="result"   TYPE="unique"  FIELDS="tmaid, posxrefid"/>
+            </KEYS>
+        </TABLE>
+    </TABLES>
+</XMLDB>

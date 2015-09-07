@@ -1,0 +1,116 @@
+@import "base.css";
+
+.bt-menu ul{
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    top: 0;
+    right:0;
+    z-index: 9999;
+    background: #0d316e;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-align:left;
+    -webkit-box-shadow: inset -10px 0 6px -9px rgba(0, 0, 0, .7);
+    -moz-box-shadow: inset -10px 0 6px -9px rgba(0, 0, 0, .7);
+    box-shadow: inset -10px 0 6px -9px rgba(0, 0, 0, .7);
+    overflow: auto;
+    -webkit-overflow-scrolling: touch; /* enables momentum scrolling in iOS overflow elements */
+    display:none;
+}
+.bt-menu-open .bt-menu ul{
+    display:block;
+}
+
+.bt-menu ul a{
+    display: block;
+    color: #b3b3b1;
+    padding: 0 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    text-decoration: none;
+}
+.bt-menu ul a:after{
+    clear: both;
+    content: " ";
+    display: block;
+    height:0;
+}
+
+.bt-menu ul a:hover{
+    background: #16438e;
+    color: #fff;
+}
+
+.bt-menu ul li a .bt-icon{
+    line-height: 50px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    font-size: 28px;
+    float: left;
+    display: block;
+}
+.bt-menu ul li a span{
+    line-height: 50px;
+    font-size: 18px;
+    display: block;
+    float: left;
+}
+.bt-menu ul li a .bt-icon.icon-podium:before {/*выравнивание иконки*/
+    position: relative;
+    top: -7px;
+}
+
+/* Menu Movement */
+.bt-menu-open{
+    -webkit-transform: translate(-300px,0);
+    -moz-transform: translate(-300px,0);
+    -ms-transform: translate(-300px,0);
+    -o-transform: translate(-300px,0);
+    transform: translate(-300px,0);
+}
+.bt-menu-open .bt-menu ul{
+    -webkit-transform: translate(300px,0);
+    -moz-transform: translate(300px,0);
+    -ms-transform: translate(300px,0);
+    -o-transform: translate(300px,0);
+    transform: translate(300px,0);
+}
+
+/* Menu Transitions */
+.bt-menu-open{
+    -webkit-transition: -webkit-transform .2s cubic-bezier(.16, .68, .43, .99);
+    -moz-transition: -moz-transform .2s cubic-bezier(.16, .68, .43, .99);
+    -o-transition: -o-transform .2s cubic-bezier(.16, .68, .43, .99);
+    transition: transform .2s cubic-bezier(.16, .68, .43, .99);
+}
+
+
+/* Trigger button */
+.bt-menu-open .bt-menu-trigger span{
+    background-color: #fff;
+}
+.bt-menu-open .bt-menu-trigger span:before {
+    top: -5px;
+    left: 10px;
+    width: 65%;
+    -webkit-transform: translateY(0) rotate(45deg);
+    transform: translateY(0) rotate(45deg);
+}
+.bt-menu-open .bt-menu-trigger span:after {
+    top: 5px;
+    left: 10px;
+    width: 65%;
+    -webkit-transform: translateY(0) rotate(-45deg);
+    transform: translateY(0) rotate(-45deg);
+}
+
+
+/* Example Media Query
+
+@media screen and (max-width: 768px){
+    .bt-menu ul{
+        font-size: 1.0em;
+    }
+}*/

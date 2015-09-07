@@ -1,0 +1,52 @@
+@import "../../../less/variables.less";
+
+.under-construction-img{padding-left:8%}
+.block_lm_achievements .content img{width: 150px;height:125px}
+
+.under-construction .uc-label{
+  font-size: @smallFont;
+  font-weight: bold;
+}
+
+
+@media (min-width: 1200px) {
+  .block_lm_achievements .content img{width: 180px;height:150px;}
+  .under-construction .uc-label{
+    font-size: @moreFont;
+    font-weight: normal;
+  }
+}
+
+@media print {
+
+
+}
+
+@media (max-height: 560px) {
+  .pagelayout-grid .block_lm_achievements.block .header h2 {
+    font-size: 12px;
+  }
+  .block_lm_achievements .uc-label, .block_lm_achievements .uc-expiration {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .block_lm_achievements .uc-label{
+    margin: 2px 0;
+  }
+  .block_lm_achievements .content img {
+    width: 90%;
+    height: auto;
+  }
+}
+@media (max-height: 430px) {
+  .block_lm_achievements .uc-label, .block_lm_achievements .uc-expiration {
+    line-height: 12px;
+  }
+  .block_lm_achievements .uc-label{
+    margin: 0;
+  }
+  .block_lm_achievements .content img {
+    width: 85%;
+    height: auto;
+  }
+}

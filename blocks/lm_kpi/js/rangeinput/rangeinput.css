@@ -1,0 +1,40 @@
+.slider {
+    position: relative;
+    cursor: pointer;
+    height: 0;
+    left: 30px;
+    border: 1px solid rgb(40, 96, 164);;
+    width: 300px;
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
+}
+
+.progress {
+    display: none;
+    background-color:#00118E;
+    height:3px;
+    position:absolute;
+    width:0;
+}
+
+.handle {
+    border:1px solid rgb(40, 96, 164);
+    background-color:#fff;
+    height:15px;
+    width:15px;
+    position:absolute;
+    top:-9px;
+    display:block;
+    cursor:move;
+    border-radius: 50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+}
+
+.handle:active {
+    background:rgb(40, 96, 164);
+}
+
+.range {
+    display:none;
+}

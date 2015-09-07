@@ -1,0 +1,293 @@
+/* линии к родителю
+ul.ul-treefree { padding-left:25px; }
+ul.ul-treefree ul { margin:0; padding-left:6px; }
+ul.ul-treefree li { position:relative; list-style:none outside none; border-left:solid 1px #999; margin:0; padding:0 0 0 19px; line-height:23px; }
+ul.ul-treefree li:before { content:''; display:block; border-bottom:solid 1px #999; position:absolute; width:18px; height:11px; left:0; top:0; }
+ul.ul-treefree li:last-child { border-left:0 none; }
+ul.ul-treefree li:last-child:before { border-left:solid 1px #999; }
+*/
+[data-level="0"] {
+    visibility: hidden;
+}
+
+[data-level="0"] span.node-post{
+    display:none;
+}
+[data-level="0"] a {
+    visibility: visible;
+}
+span.node-icon-ce{
+    visibility: visible;
+}
+
+#addstaff-modal{
+    visibility: hidden;
+}
+
+.buttons button{
+    visibility:hidden;
+}
+#add_company{
+    display: none;
+}
+li{
+    list-style-type: none;
+}
+
+#list_pos div{
+    cursor: default;
+}
+
+#list_pos div:before{
+    cursor: pointer;
+}
+
+#list_pos li:hover div:hover{
+    background-color: #87CEFA;
+}
+
+#list_pos li:hover div{
+    background-color: inherit;
+}
+
+.popup input{
+    margin-bottom: 10px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+li.open div:before{
+    content: "\25bc";
+}
+
+li.closed div:before{
+    content: "\25b6";
+}
+
+
+#region-main{
+    height:98%;
+}
+
+#list_pos{
+    overflow: hidden auto;
+}
+
+select{
+    width: 100%;
+}
+
+.chosen-container {
+    margin-bottom: 20px;
+}
+
+a .block{
+    text-decoration: underline;
+}
+
+.see{
+    display: block;
+}
+
+.hidden{
+    display: none;
+}
+
+div[role=main]{
+    height:100%;
+}
+
+.block{
+    overflow-x: hidden;
+    overflow-y: auto;
+    float: left;
+    width: 70%;
+    height: calc(100% - 100px);
+
+}
+
+.chosen-container .chosen-container-multi ::before{
+    content: "1";
+}
+.filters{
+    width: 25%;
+    float: right;
+}
+
+.filters select{
+    margin-bottom: 20px;
+}
+
+#input_fio{
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.buttons button{
+    margin-right:20px;
+}
+
+
+
+
+/*** Стили относящиеся к модальному окну и содержанию ***/
+.popup h1 { /* заголовок 1 */
+    color: #008000;
+    text-align: left;
+    text-shadow: 0 1px 3px rgba(0,0,0,.3);
+    font:24px 'Trebuchet MS', Helvetica, sans-serif;
+    font-weight: bold;
+}
+.popup h2 { /* заголовок 2 */
+    color: #008000;
+    text-align: left;
+    text-shadow: 0 1px 3px rgba(0,0,0,.3);
+    font:22px 'Trebuchet MS', Helvetica, sans-serif;
+}
+/* Базовые стили слоя затемнения и модального окна  */
+.overlay {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    visibility: hidden;
+    /* фон затемнения */
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    position: fixed; /* фиксированное поцизионирование */
+    cursor: default; /* тип курсара */
+    -webkit-transition: opacity .5s;
+    -moz-transition: opacity .5s;
+    -ms-transition: opacity .5s;
+    -o-transition: opacity .5s;
+    transition: opacity .5s;
+}
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+.is-image {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display:block;
+    margin: auto;
+    width: 100%;
+    height: auto;
+    /* скругление углов встроенных картинок */
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    border-radius: 4px;
+}
+/* встроенные элементы м-медиа, фреймы */
+embed, iframe {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display:block;
+    margin: auto;
+    min-width: 320px;
+    max-width: 600px;
+    width: 100%;
+}
+/* стили модального окна */
+.popup {
+    top: 10%;
+    right: 0;
+    left: 0;
+    font-size: 14px;
+    z-index: 10;
+    display: block;
+    visibility: hidden;
+    margin: 0 auto;
+    width: 90%;
+    min-width: 320px;
+    max-width: 600px;
+    /* фиксированное позиционирование, окно стабильно при прокрутке */
+    position: fixed;
+    padding: 15px;
+    border: 1px solid #383838;
+    /* скругление углов */
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    /* внешняя тень */
+    -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+    -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+    -ms-box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+    -o-box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.8);
+    /* полная прозрачность окна, появление при клике */
+    opacity: 0;
+    /* эффект перехода (появление) */
+    -webkit-transition: all ease .5s;
+    -moz-transition: all ease .5s;
+    -ms-transition: all ease .5s;
+    -o-transition: all ease .5s;
+    transition: all ease .5s;
+}
+.overlay:target+.popup {
+    top: 0%;
+    visibility: visible;
+    opacity: 1;
+}
+/* формируем кнопку закрытия */
+.close {
+    position: absolute;
+    top: -10px;
+    right: -10px;padding: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    border-radius: 15px;
+    background-color: rgba(61, 61, 61, 0.8);
+    -webkit-box-shadow: 0px 0px 10px #000;
+    -moz-box-shadow: 0px 0px 10px #000;
+    box-shadow: 0px 0px 10px #000;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    line-height: 20px;
+    -webkit-transition: all ease .8s;
+    -moz-transition: all ease .8s;
+    -ms-transition: all ease .8s;
+    -o-transition: all ease .8s;
+    transition: all ease .8s;
+}
+.close:before {
+    color: rgba(255, 255, 255, 0.9);
+    content: "X";
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.9);
+    font-size: 12px;
+}
+.close:hover {
+    background-color: rgba(252, 20, 0, 0.8);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+.popup p, .popup div {
+    margin-bottom: 10px;
+}
+
+/* =========================================================
+ * bootstrap-gtreetable v2.2.1-alpha
+ * https://github.com/gilek/bootstrap-gtreetable
+ * =========================================================
+ * Copyright 2014 Maciej Kłak
+ * Licensed under MIT (https://github.com/gilek/bootstrap-gtreetable/blob/master/LICENSE)
+ * ========================================================= */
+
+.gtreetable .icon{position:relative;top:1px;display:inline-block;font-family:'Glyphicons Halflings';font-style:normal;font-weight:400;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.gtreetable .node-name{line-height:28px;cursor:pointer}.gtreetable .node-loading{background:url(data:image/gif;base64,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) no-repeat;padding-left:22px}.gtreetable .node-icon-selected{margin-right:6px;display:none}.gtreetable .node-icon-selected:before{content:"\2714"}.gtreetable .node-icon-type{margin-right:12px;opacity:.2;filter:alpha(opacity=20);display:none}.gtreetable .node-icon-ce{margin-right:6px;opacity:.2;filter:alpha(opacity=20);cursor:pointer}.gtreetable .node-icon-ce:before{content:"\002B"}.gtreetable .node-expanded .node-icon-ce{-webkit-transform:rotate(90deg);-ms-transform:rotate(90deg);-o-transform:rotate(90deg);transform:rotate(90deg)}.gtreetable .node-hovered{background-color:#f5f5f5}.gtreetable .node-hovered .node-icon-ce,.gtreetable .node-hovered .node-icon-type{opacity:1;filter:alpha(opacity=100)}.gtreetable .node-icon-handle{padding-right:12px;cursor:url(data:image/x-icon;base64,AAACAAEAICACAAcABQAwAQAAFgAAACgAAAAgAAAAQAAAAAEAAQAAAAAAAAEAAAAAAAAAAAAAAgAAAAAAAAAAAAAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD8AAAA/AAAAfwAAAP+AAAH/gAAB/8AAA//AAAd/wAAGf+AAAH9gAADbYAAA2yAAAZsAAAGbAAAAGAAAAAAAAA//////////////////////////////////////////////////////////////////////////////////////gH///4B///8Af//+AD///AA///wAH//4AB//8AAf//AAD//5AA///gAP//4AD//8AF///AB///5A////5///8=),move;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAECAMAAABx7QVyAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRFzMzM////040VdgAAAAJ0Uk5T/wDltzBKAAAAFklEQVR42mJgYGBkAAEQyQgCEBIgwAAAeAAN4Rn1SQAAAABJRU5ErkJggg==) repeat-y;visibility:hidden}.gtreetable .node-draggable.node-hovered .node-icon-handle{visibility:visible}.gtreetable .node-buttons{visibility:hidden}.gtreetable.gtreetable-fullAccess .node-hovered.node-saved .node-buttons,.gtreetable.gtreetable-fullAccess .node-selected.node-saved .node-buttons{visibility:visible}.gtreetable .node-selected .node-icon-selected{display:inline-block}.gtreetable input{display:inline;margin-right:6px;height:28px;padding:3px 6px}.gtreetable .node-draggable-helper{cursor:url(data:image/x-icon;base64,AAACAAEAICACAAcABQAwAQAAFgAAACgAAAAgAAAAQAAAAAEAAQAAAAAAAAEAAAAAAAAAAAAAAgAAAAAAAAAAAAAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD8AAAA/AAAAfwAAAP+AAAH/gAAB/8AAAH/AAAB/wAAA/0AAANsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////////////////////////////////////////////////////////////////////////////////////gH///4B///8Af//+AD///AA///wAH//+AB///wAf//4AH//+AD///yT/////////////////////////////8=),pointer}.gtreetable .node-draggable-pointer{position:absolute;visibility:hidden;display:inline-block;width:0;height:0;margin-left:2px;vertical-align:middle;border-top:6px solid;border-right:6px solid transparent;border-left:6px solid transparent;transform:rotate(-90deg)}.node-draggable-container{background-color:#f5f5f5}.node-draggable-container .node-draggable-pointer{visibility:visible}

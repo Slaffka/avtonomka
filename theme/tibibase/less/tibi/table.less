@@ -1,0 +1,243 @@
+/* общие стили таблицы */
+
+/* WHY ??
+html .table-view{
+  overflow-y: hidden;
+}
+*/
+
+.table thead tr th:first-child{
+  -webkit-top-left-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  border-top-left-radius: 5px;
+}
+.table thead tr th:last-child {
+  -webkit-top-right-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  border-top-right-radius: 5px;
+}
+
+.table-responsive{
+  overflow-x: scroll;
+}
+
+.table {
+  border-collapse: separate;
+  border-spacing: 0 1px;
+  margin-bottom: 0;
+}
+
+
+.table td,
+.table th{
+  border-top: none;
+}
+.table th {
+  font-weight: normal;
+}
+
+
+
+.table-myteam{
+  min-width: @minimalWidth;
+  margin-top:2px;
+  font-size: @mainFont;
+  border-color: transparent;
+  color: @mainColor;
+
+  thead tr{
+    background:@white;
+  }
+
+  thead th{
+    text-align: center;
+    border:none;
+    vertical-align: middle;
+    border-right: 1px solid @mainColor;
+    padding: 20px;
+
+  }
+
+  td{
+    text-align: center;
+    vertical-align: middle;
+    padding:8px;
+
+  }
+
+  tr:first-child td {
+    padding:18px 10px;
+  }
+
+}
+
+
+.table-myteam td a {
+  margin-left: 3px;
+  color: @mainColor;
+}
+
+
+.table-myteam .table-user{
+  max-width: 71%;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: normal;
+  margin-left: 8px;
+  line-height: 20px;
+}
+
+.table-myteam.table-kpi tr:last-child td a.table-user,
+.table-myteam.table-rating tr:last-child td a.table-user,
+.table-myteam.table-tutoring tr:last-child td a.table-user
+{
+  margin-top: 0;
+  float: none;
+}
+
+
+.table-myteam tbody tr:nth-child(even){
+  background:@tableTrEven;
+}
+.table-myteam tbody tr:nth-child(odd){
+  background:@tableTrOdd;
+}
+.table-view .table-myteam tbody tr:first-child{
+  background: #bad3e9;
+}
+
+
+.table-myteam  td:first-child{
+  padding: 8px;
+  white-space: nowrap;
+}
+
+/*  end общие стили таблицы */
+
+
+/*table-modal*/
+.table-modal.modal{
+  width: auto;
+}
+.table-modal .modal-header{
+  padding:0;
+  border-bottom: none;
+  background: @white;
+  -webkit-border-top-left-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  border-top-right-radius: 5px;
+}
+.table-modal h4 {
+  margin: 0;
+  text-align: center;
+  padding: 10px;
+  border-bottom: 1px solid @grey;
+}
+.table-modal .close {
+  margin: 8px;
+}
+.table-modal table{
+  font-size: @mainFont;
+  border-collapse: collapse;
+}
+.table-modal tr:nth-child(2n+1){
+  background: @tableTrEven;
+}
+.table-modal tr:nth-child(2n){
+  background: @tableTrOdd;
+}
+.table-modal img{
+  margin-right: 10px;
+}
+
+.table-modal th{
+  background: @white;
+  padding: 10px 30px;
+  font-weight: normal;
+}
+.table-modal th:first-child,
+.table-modal td:first-child
+{
+  border-right: 1px solid @blue;
+}
+.table-modal tfoot th,
+.table-modal tfoot td
+{
+  border-right: 1px solid @blue;
+}
+.table-modal th:last-child{
+
+  border-right: none;
+}
+.table-modal th:last-child a {
+  border-bottom: 1px dotted @blue;
+  text-decoration: none;
+  font-size: 14px;
+}
+.table-modal td{
+  padding: 10px 8px;
+  border-top: 1px solid @grey;
+  border-right: 1px solid @grey;
+}
+.table-modal td:last-child {
+  border-right: none;
+}
+
+.table-modal tfoot td,
+.table-modal tfoot th
+{
+  border-top: 1px solid #6c7076;
+  background: @mainColor;
+  white-space: nowrap;
+  color: @white;
+  font-weight: normal;
+  text-align: center;
+}
+.table-modal tfoot th{
+  text-align: left;
+}
+.table-myteam .userpicture{
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* end table-modal*/
+
+@media (min-width: 768px) {
+  .table-modal.modal {
+    left:43%
+  }
+}
+
+@media (min-width: 960px) {
+  .table-modal.modal {
+    left:50%
+  }
+  .table-responsive{
+    overflow: hidden;
+  }
+}
+
+
+
+@media (min-width: 1200px) {
+  .table-myteam{
+    padding-right:0;
+  }
+
+  .table-modal.modal {
+    left:60%
+  }
+
+}
+
+@media (min-width: 1500px) {
+  .table-modal.modal {
+    left:70%
+  }
+}

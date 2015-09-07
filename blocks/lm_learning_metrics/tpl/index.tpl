@@ -1,0 +1,47 @@
+
+{*<table class="table table-hover">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Лучш.</th>
+            <th>Мой балл</th>
+            <th>Ошибок</th>
+            <th>Время</th>
+        </tr>
+    </thead>
+    <tr>
+        <td>Продукт</td>
+        <td>100</td>
+        <td>87</td>
+        <td>4</td>
+        <td>02:12:03</td>
+    </tr>
+    <tr>
+        <td>Мерч</td>
+        <td>90</td>
+        <td>82</td>
+        <td>12</td>
+        <td>02:58:47</td>
+    </tr>
+    <tr>
+        <td>НЭП-1</td>
+        <td>220</td>
+        <td>194</td>
+        <td>21</td>
+        <td>03:45:19</td>
+    </tr>
+    <tr>
+        <td>Стандарты</td>
+        <td>180</td>
+        <td>165</td>
+        <td>17</td>
+        <td>03:27:15</td>
+    </tr>
+    <tr>
+        <td>Чикаго-1</td>
+        <td>120</td>
+        <td>112</td>
+        <td>8</td>
+        <td>02:31:24</td>
+    </tr>
+</table>*}

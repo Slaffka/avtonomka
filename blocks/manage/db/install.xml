@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="blocks/manage/db" VERSION="2015071306" COMMENT="XMLDB file for Moodle blocks/manage"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+        >
+    <TABLES>
+        <TABLE NAME="lm_company" COMMENT="" NEXT="lm_partner">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" NEXT="company"/>
+                <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" PREVIOUS="id" NEXT="type"/>
+                <FIELD NAME="synonyms" TYPE="text" NOTNULL="false" SEQUENCE="false" PREVIOUS="name" NEXT="type"/>
+                <FIELD NAME="type" TYPE="char" LENGTH="20" NOTNULL="false" SEQUENCE="false" PREVIOUS="company" NEXT="userid"/>
+                <FIELD NAME="hide" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="type"/>
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+            </KEYS>
+        </TABLE>
+        <TABLE NAME="lm_partner" COMMENT="" PREVIOUS="lm_company" NEXT="lm_partner_program">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" NEXT="companyid"/>
+                <FIELD NAME="companyid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="id" NEXT="name"/>
+                <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" PREVIOUS="companyid" NEXT="regionid"/>
+                <FIELD NAME="synonyms" TYPE="text" NOTNULL="false" SEQUENCE="false" PREVIOUS="name" NEXT="regionid"/>
+                <FIELD NAME="regionid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="name" NEXT="pamid"/>
+                <FIELD NAME="pamid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="regionid" NEXT="tmid_deprecated" COMMENT="менеджер по работе с партнером"/>
+                <FIELD NAME="tmid_deprecated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="pamid" NEXT="trainerid_deprecated" COMMENT="территориальный менеджер"/>
+                <FIELD NAME="trainerid_deprecated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="tmid_deprecated" NEXT="respid_deprecated" COMMENT="менеджер по работе с партнером"/>
+                <FIELD NAME="respid_deprecated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="trainerid_deprecated" NEXT="repid_deprecated" COMMENT="ответственный за партнера"/>
+                <FIELD NAME="repid_deprecated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="respid_deprecated" NEXT="cohortid" COMMENT="контактное лицо"/>
+                <FIELD NAME="cohortid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="userid" NEXT="comment"/>
+                <FIELD NAME="comment" TYPE="text" NOTNULL="false" SEQUENCE="false" PREVIOUS="userid" NEXT="programscount"/>
+                <FIELD NAME="programscount" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="comment" NEXT="trainedpercent" COMMENT="Используется для сортировки"/>
+                <FIELD NAME="trainedpercent" TYPE="float" LENGTH="3" DECIMALS="2" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="programscount" COMMENT="Используется для сортировки" />
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+            </KEYS>
+            <INDEXES>
+                <INDEX NAME="companyid" UNIQUE="false" FIELDS="companyid" />
+                <INDEX NAME="regionid" UNIQUE="false" FIELDS="regionid" />
+                <INDEX NAME="pamid" UNIQUE="false" FIELDS="pamid" />
+            </INDEXES>
+        </TABLE>
+        <TABLE NAME="lm_partner_program" COMMENT="" PREVIOUS="lm_partner" NEXT="lm_partner_staff">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" NEXT="programid"/>
+                <FIELD NAME="programid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="id" NEXT="partnerid"/>
+                <FIELD NAME="partnerid" TYPE="int" LENGTH="10" NOTNULL="false" DEFAULT="0" SEQUENCE="false" PREVIOUS="programid" NEXT="assignedby"/>
+                <FIELD NAME="assignedby" TYPE="int" LENGTH="10" NOTNULL="false" DEFAULT="0" SEQUENCE="false" PREVIOUS="partnerid" NEXT="trainedpercent"/>
+                <FIELD NAME="trainedpercent" TYPE="float" LENGTH="5" DECIMALS="2" NOTNULL="false" DEFAULT="0" SEQUENCE="false" PREVIOUS="assignedby" COMMENT="% обученности сотрудников по программе" />
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+            </KEYS>
+            <INDEXES>
+                <INDEX NAME="programid" UNIQUE="false" FIELDS="programid" />
+                <INDEX NAME="partnerid" UNIQUE="false" FIELDS="partnerid" />
+            </INDEXES>
+        </TABLE>
+        <TABLE NAME="lm_partner_staff" COMMENT="" PREVIOUS="lm_partner_program" NEXT="lm_partner">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" />
+                <FIELD NAME="ttid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="id" />
+                <FIELD NAME="partnerid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="ttid" />
+                <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="type" />
+                <FIELD NAME="type" TYPE="int" LENGTH="2" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
+                <FIELD NAME="stageid" TYPE="int" LENGTH="2" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="id этапа развития сотрудника (см.матрицу развития)" />
+                <FIELD NAME="archive" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+            </KEYS>
+            <INDEXES>
+                <INDEX NAME="ttid" UNIQUE="false" FIELDS="ttid" />
+                <INDEX NAME="partnerid" UNIQUE="false" FIELDS="partnerid" />
+                <INDEX NAME="userid" UNIQUE="false" FIELDS="userid" />
+            </INDEXES>
+        </TABLE>
+        <TABLE NAME="lm_partner_staff_progress" COMMENT="Инфо об обученности сотрудников по программам" PREVIOUS="lm_partner_staff" NEXT="lm_program">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" />
+                <FIELD NAME="partnerid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
+                <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"  />
+                <FIELD NAME="programid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
+                <FIELD NAME="progress" TYPE="float" LENGTH="5" DECIMALS="2" NOTNULL="false" DEFAULT="NULL" SEQUENCE="false" PREVIOUS="archive" COMMENT="% обученности по программе"/>
+                <FIELD NAME="mistakes" TYPE="int" LENGTH="4" NOTNULL="false" DEFAULT="NULL" SEQUENCE="false" PREVIOUS="progress" COMMENT="Кол-во допущеных ошибок"/>
+                <FIELD NAME="duration" TYPE="int" LENGTH="10" NOTNULL="false" DEFAULT="NULL" SEQUENCE="false" PREVIOUS="mistakes" COMMENT="Время прохождения курса"/>
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+            </KEYS>
+            <INDEXES>
+                <INDEX NAME="partnerid" UNIQUE="false" FIELDS="partnerid" />
+                <INDEX NAME="userid" UNIQUE="false" FIELDS="userid" />
+                <INDEX NAME="programid" UNIQUE="false" FIELDS="programid" />
+            </INDEXES>
+        </TABLE>
+        <TABLE NAME="lm_program" COMMENT="" PREVIOUS="lm_partner_staff" NEXT="lm_activity">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" NEXT="name"/>
+                <FIELD NAME="name" TYPE="char" LENGTH="200" NOTNULL="true" SEQUENCE="false" PREVIOUS="id" NEXT="courseid"/>
+                <FIELD NAME="courseid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="name" NEXT="parent"/>
+                <FIELD NAME="parent" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="courseid" NEXT="period"/>
+                <FIELD NAME="period" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="parent"/>
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+            </KEYS>
+            <INDEXES>
+                <INDEX NAME="courseid" UNIQUE="false" FIELDS="courseid" />
+            </INDEXES>
+        </TABLE>
+        <TABLE NAME="lm_program_matrix" COMMENT="Матрица программ по этапам развития">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" />
+                <FIELD NAME="postid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+                <FIELD NAME="programid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
+                <FIELD NAME="stage" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
+                <FIELD NAME="sequence" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+            </KEYS>
+            <INDEXES>
+                <INDEX NAME="posid" UNIQUE="false" FIELDS="posid" />
+                <INDEX NAME="programid" UNIQUE="false" FIELDS="programid" />
+            </INDEXES>
+        </TABLE>
+        <TABLE NAME="lm_activity" COMMENT="" PREVIOUS="lm_program" NEXT="lm_activity_request">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" NEXT="trainerid"/>
+                <FIELD NAME="trainerid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="id" NEXT="programid"/>
+                <FIELD NAME="programid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="id" NEXT="placeid"/>
+                <FIELD NAME="placeid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="programid" NEXT="type"/>
+                <FIELD NAME="maxmembers" TYPE="int" LENGTH="3" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="programid" NEXT="type"/>
+                <FIELD NAME="type" TYPE="char" LENGTH="20" NOTNULL="false" SEQUENCE="false" PREVIOUS="maxmembers" NEXT="auditory"/>
+                <FIELD NAME="auditory" TYPE="char" LENGTH="20" NOTNULL="false" SEQUENCE="false" PREVIOUS="type" NEXT="comment"/>
+                <FIELD NAME="comment" TYPE="text" NOTNULL="false" SEQUENCE="false" PREVIOUS="auditory" NEXT="comment2"/>
+                <FIELD NAME="comment2" TYPE="text" NOTNULL="false" SEQUENCE="false" PREVIOUS="comment" NEXT="properties"/>
+                <FIELD NAME="properties" TYPE="text" NOTNULL="false" SEQUENCE="false" PREVIOUS="comment" NEXT="startdate"/>
+                <FIELD NAME="startdate" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="properties" NEXT="enddate"/>
+                <FIELD NAME="enddate" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="startdate"/>
+                <FIELD NAME="hourscount" TYPE="float" LENGTH="10" DECIMALS="2" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="enddate" NEXT="requestcount" COMMENT="Используется для сортировки"/>
+                <FIELD NAME="requestcount" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="hourscount" NEXT="trainedcount" COMMENT="Используется для сортировки"/>
+                <FIELD NAME="trainedcount" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="requestcount" COMMENT="Используется для сортировки"/>
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+            </KEYS>
+            <INDEXES>
+                <INDEX NAME="trainerid" UNIQUE="false" FIELDS="trainerid" />
+                <INDEX NAME="programid" UNIQUE="false" FIELDS="programid" />
+                <INDEX NAME="placeid" UNIQUE="false" FIELDS="placeid" />
+            </INDEXES>
+        </TABLE>
+        <TABLE NAME="lm_activity_request" COMMENT="" PREVIOUS="lm_activity" NEXT="lm_post">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" NEXT="activityid"/>
+                <FIELD NAME="activityid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="id" NEXT="partnerid"/>
+                <FIELD NAME="partnerid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="activityid" NEXT="userid"/>
+                <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="activityid" NEXT="requestedby"/>
+                <FIELD NAME="requestedby" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="userid" NEXT="passed"/>
+                <FIELD NAME="passed" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="userid"/>
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+            </KEYS>
+            <INDEXES>
+                <INDEX NAME="activityid" UNIQUE="false" FIELDS="activityid" />
+                <INDEX NAME="partnerid" UNIQUE="false" FIELDS="partnerid" />
+                <INDEX NAME="userid" UNIQUE="false" FIELDS="userid" />
+            </INDEXES>
+        </TABLE>
+        <TABLE NAME="lm_post" COMMENT="" PREVIOUS="lm_place" NEXT="lm_position">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" />
+                <FIELD NAME="code" TYPE="char" LENGTH="32" NOTNULL="false" DEFAULT="0" SEQUENCE="false" />
+                <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" />
+                <FIELD NAME="roleid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
+                <FIELD NAME="parent" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+                <FIELD NAME="evolution_stages_enabled" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+            </KEYS>
+        </TABLE>
+        <TABLE NAME="lm_position" COMMENT="" PREVIOUS="lm_post" NEXT="lm_region">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" />
+                <FIELD NAME="code" TYPE="char" LENGTH="32" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
+                <FIELD NAME="parentcode" TYPE="char" LENGTH="32" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
+                <FIELD NAME="postcode" TYPE="char" LENGTH="32" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+                <FIELD NAME="cityid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+                <FIELD NAME="postid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+                <FIELD NAME="segmentid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+                <FIELD NAME="distribid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+                <FIELD NAME="areaid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+                <FIELD NAME="parentid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+                <FIELD NAME="parentfid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+                <FIELD NAME="distribid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+                <FIELD NAME="segmentid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+            </KEYS>
+            <INDEXES>
+                <INDEX NAME="parentid" UNIQUE="false" FIELDS="parentid" />
+                <INDEX NAME="userid" UNIQUE="false" FIELDS="userid" />
+                <INDEX NAME="cityid" UNIQUE="false" FIELDS="cityid" />
+                <INDEX NAME="postid" UNIQUE="false" FIELDS="postid" />
+                <INDEX NAME="areaid" UNIQUE="false" FIELDS="areaid" />
+            </INDEXES>
+        </TABLE>
+        <TABLE NAME="lm_position_xref" COMMENT="">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" />
+                <FIELD NAME="staffercode" TYPE="char" LENGTH="32" NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="posid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" DEFAULT="0" />
+                <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" DEFAULT="0" />
+                <!-- В XMLDB нет типа date, поэтому ставим datetime и изменим тип во время установки sql-запросом -->
+                <FIELD NAME="dateassignment" TYPE="datetime" NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="archive" TYPE="int" LENGTH="1" NOTNULL="true" SEQUENCE="false" DEFAULT="0" />
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+                <KEY NAME="value" TYPE="unique" FIELDS="posid,userid,dateassignment" />
+                <KEY NAME="posid" TYPE="foreign" FIELDS="posid" REFTABLE="lm_position" REFFIELDS="id" />
+            </KEYS>
+        </TABLE>
+
+        <TABLE NAME="lm_region" COMMENT="" PREVIOUS="lm_activity_request" NEXT="lm_region_trainer">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+                <FIELD NAME="code" TYPE="char" LENGTH="32" NOTNULL="true" SEQUENCE="false"/>
+                <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" PREVIOUS="id" NEXT="translitname"/>
+                <FIELD NAME="synonyms" TYPE="text" NOTNULL="false" SEQUENCE="false" PREVIOUS="name" NEXT="translitname"/>
+                <FIELD NAME="translitname" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" PREVIOUS="name" NEXT="parentid"/>
+                <FIELD NAME="parentid" TYPE="int" LENGTH="10" NOTNULL="false" DEFAULT="0" SEQUENCE="false" PREVIOUS="translitname"/>
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+                <!--KEY NAME="code" TYPE="foreign" FIELDS="code"/-->
+            </KEYS>
+        </TABLE>
+        <TABLE NAME="lm_region_trainer" COMMENT="" PREVIOUS="lm_region" NEXT="lm_sales">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" NEXT="regionid"/>
+                <FIELD NAME="regionid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="id" NEXT="trainerid"/>
+                <FIELD NAME="trainerid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="regionid"/>
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+            </KEYS>
+        </TABLE>
+        <TABLE NAME="lm_stat" COMMENT="" PREVIOUS="lm_region_trainer" NEXT="lm_place">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" NEXT="partnerid"/>
+                <FIELD NAME="partnerid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="id" NEXT="ttid"/>
+                <FIELD NAME="ttid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="partnerid" NEXT="decade"/>
+                <FIELD NAME="period" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="ttid" NEXT="decade"/>
+                <FIELD NAME="decade" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="period" NEXT="month"/>
+                <FIELD NAME="month" TYPE="int" LENGTH="2" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="decade" NEXT="year"/>
+                <FIELD NAME="year" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="month" NEXT="plansales"/>
+                <FIELD NAME="plansales" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="id" NEXT="factsales"/>
+                <FIELD NAME="factsales" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="plansales" NEXT="returns"/>
+                <FIELD NAME="returns" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="factsales" NEXT="stock"/>
+                <FIELD NAME="stock" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="returns" />
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+            </KEYS>
+            <INDEXES>
+                <INDEX NAME="partnerid" UNIQUE="false" FIELDS="partnerid" NEXT="ttid"/>
+                <INDEX NAME="ttid" UNIQUE="false" FIELDS="ttid" PREVIOUS="partnerid" />
+            </INDEXES>
+        </TABLE>
+        <TABLE NAME="lm_place" COMMENT="" PREVIOUS="lm_stat" NEXT="lm_user">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" NEXT="code"/>
+                <FIELD NAME="code" TYPE="char" LENGTH="25" NOTNULL="false" SEQUENCE="false" PREVIOUS="id" NEXT="type"/>
+                <FIELD NAME="type" TYPE="char" LENGTH="10" NOTNULL="false" SEQUENCE="false" PREVIOUS="code" NEXT="partnerid"/>
+                <FIELD NAME="partnerid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="type" NEXT="partnername"/>
+                <FIELD NAME="partnername" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" PREVIOUS="partnerid" NEXT="cityid"/>
+                <FIELD NAME="rawaddress" TYPE="text" NOTNULL="false" SEQUENCE="false" PREVIOUS="partnername" NEXT="cityid"/>
+                <FIELD NAME="cityid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="partnername" NEXT="postcode" COMMENT="Вместимость аудитории" />
+                <FIELD NAME="postcode" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="cityid" NEXT="capacity" />
+                <FIELD NAME="capacity" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="cityid" NEXT="metro"/>
+
+                <FIELD NAME="metro" TYPE="char" LENGTH="100" NOTNULL="false" SEQUENCE="false" PREVIOUS="capacity" NEXT="street"/>
+                <FIELD NAME="street" TYPE="char" LENGTH="100" NOTNULL="false" SEQUENCE="false" PREVIOUS="metro" NEXT="num"/>
+                <FIELD NAME="num" TYPE="char" LENGTH="5" NOTNULL="false" SEQUENCE="false" PREVIOUS="street" NEXT="bld"/>
+                <FIELD NAME="bld" TYPE="char" LENGTH="5" NOTNULL="false" SEQUENCE="false" PREVIOUS="num" NEXT="corp"/>
+                <FIELD NAME="corp" TYPE="char" LENGTH="5" NOTNULL="false" SEQUENCE="false" PREVIOUS="bld" NEXT="corp"/>
+                <FIELD NAME="floor" TYPE="char" LENGTH="5" NOTNULL="false" SEQUENCE="false" PREVIOUS="corp" NEXT="name"/>
+                <FIELD NAME="name" TYPE="char" LENGTH="100" NOTNULL="false" SEQUENCE="false" PREVIOUS="floor" NEXT="comment"/>
+                <FIELD NAME="comment" TYPE="text" NOTNULL="false" SEQUENCE="false" PREVIOUS="name" NEXT="comment2"/>
+                <FIELD NAME="comment2" TYPE="text" NOTNULL="false" SEQUENCE="false" PREVIOUS="comment" NEXT="respid"/>
+
+                <FIELD NAME="respid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="comment2" NEXT="tmid"/>
+                <FIELD NAME="tmid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="respid" NEXT="trainerid"/>
+                <FIELD NAME="trainerid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="tmid" NEXT="repid"/>
+                <FIELD NAME="repid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="trainerid" NEXT="contactname"/>
+
+                <FIELD NAME="contactname" TYPE="char" LENGTH="100" NOTNULL="false" SEQUENCE="false" PREVIOUS="respid" NEXT="contactphone"/>
+                <FIELD NAME="contactphone" TYPE="char" LENGTH="100" NOTNULL="false" SEQUENCE="false" PREVIOUS="contactname" NEXT="contactemail"/>
+                <FIELD NAME="contactemail" TYPE="char" LENGTH="100" NOTNULL="false" SEQUENCE="false" PREVIOUS="contactphone" NEXT="flipchart"/>
+
+                <FIELD NAME="flipchart" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="contactemail" NEXT="projector" COMMENT="Есть ли флипчарт"/>
+                <FIELD NAME="projector" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="flipchart" NEXT="wifi" COMMENT="Есть ли проектор"/>
+                <FIELD NAME="wifi" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="projector" NEXT="cooler" COMMENT="Есть ли wifi"/>
+                <FIELD NAME="cooler" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0" SEQUENCE="false" PREVIOUS="wifi" COMMENT="Есть ли куллер"/>
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+            </KEYS>
+            <INDEXES>
+                <INDEX NAME="partnerid" UNIQUE="false" FIELDS="partnerid" NEXT="cityid"/>
+                <INDEX NAME="cityid" UNIQUE="false" FIELDS="cityid" PREVIOUS="partnerid" NEXT="respid"/>
+                <INDEX NAME="respid" UNIQUE="false" FIELDS="respid" PREVIOUS="cityid" NEXT="tmid"/>
+                <INDEX NAME="tmid" UNIQUE="false" FIELDS="tmid" PREVIOUS="respid" NEXT="trainerid"/>
+                <INDEX NAME="trainerid" UNIQUE="false" FIELDS="trainerid" PREVIOUS="tmid" NEXT="repid"/>
+                <INDEX NAME="repid" UNIQUE="false" FIELDS="repid" PREVIOUS="trainerid" />
+            </INDEXES>
+        </TABLE>
+        <TABLE NAME="lm_user" COMMENT="" PREVIOUS="lm_place" NEXT="lm_outlet">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" />
+                <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
+                <!-- В XMLDB нет типа date, поэтому ставим datetime и изменим тип во время установки sql-запросом -->
+                <FIELD NAME="hiredate" TYPE="datetime" NOTNULL="false" DEFAULT="NULL" SEQUENCE="false" />
+                <FIELD NAME="synonyms" TYPE="text" NOTNULL="false" SEQUENCE="false"  />
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+            </KEYS>
+        </TABLE>
+        <TABLE NAME="lm_nomenclature" COMMENT="" PREVIOUS="lm_user">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" />
+                <FIELD NAME="code" TYPE="char" LENGTH="32" NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" />
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+                <KEY NAME="code" TYPE="unique" FIELDS="code"/>
+            </KEYS>
+        </TABLE>
+        <TABLE NAME="lm_area" COMMENT="" PREVIOUS="lm_nomenclature">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" />
+                <FIELD NAME="code" TYPE="char" LENGTH="32" NOTNULL="true" SEQUENCE="false" />
+                <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" />
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+                <!--KEY NAME="code" TYPE="foreign" FIELDS="code"/-->
+            </KEYS>
+        </TABLE>
+        <TABLE NAME="lm_trade_outlets" COMMENT="" PREVIOUS="lm_area">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" />
+                <FIELD NAME="code"   TYPE="char" LENGTH="32"  NOTNULL="true"  SEQUENCE="false" />
+                <FIELD NAME="areaid" TYPE="int"  LENGTH="10"  NOTNULL="true"  DEFAULT="0" SEQUENCE="false" />
+                <FIELD NAME="name"   TYPE="char" LENGTH="255" NOTNULL="false" DEFAULT=""  SEQUENCE="false" />
+                <FIELD NAME="address" TYPE="char" LENGTH="255" NOTNULL="false" DEFAULT=""  SEQUENCE="false" />
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+                <!--KEY NAME="code" TYPE="foreign" FIELDS="code"/-->
+            </KEYS>
+        </TABLE>
+    </TABLES>
+</XMLDB>

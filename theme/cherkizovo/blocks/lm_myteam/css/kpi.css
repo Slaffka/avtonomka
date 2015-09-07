@@ -1,0 +1,87 @@
+/** СТРАНИЦА ПОДРОБНЕЕ**/
+/*variables*/
+/*Цвет кнопок*/
+/*Цвет выделенного пункта меню, фон таблиц*/
+/*Цвет текста, заголовков, hover кнопок, фона меню, границы столбцов таблицы*/
+/*Цвет фона блоков и графиков*/
+/*table */
+/*Bank */
+/*Rating */
+/* SettingGoals */
+/*Myteam */
+/*цвет ссылок*/
+/*Цвет переключателя*/
+/*Feedback */
+/*KPI*/
+.metric-details {
+  margin: 0 auto;
+  width: auto;
+}
+.metrics-list {
+  margin: 20px auto;
+  width: 900px;
+  margin-top: 30px;
+  clear: both;
+}
+.metric-container {
+  float: left;
+  padding: 0 10px;
+}
+.metric-chart {
+  display: block;
+  float: left;
+  margin: 20px 0 0 1%;
+}
+span.metric-chart {
+  margin: 20px 10px;
+}
+.metric-chart.metric-active {
+  opacity: .5;
+}
+.metric-info {
+  display: table;
+  float: left;
+  margin: 20px 3%;
+}
+.metric-info-line {
+  display: table-row;
+}
+.metric-info-label {
+  display: table-cell;
+  width: 150px;
+  vertical-align: middle;
+}
+.metric-info-val {
+  display: table-cell;
+  text-align: center;
+}
+.metric-info-val div {
+  background: #bad3e9;
+  border-radius: 5px;
+  padding: 10px 27px;
+  margin: 2px 5px;
+}
+.metric-history-chart {
+  float: left;
+  margin: 20px 0;
+}
+@media (max-width: 1254px) {
+  .metrics-list {
+    float: left;
+    width: 360px;
+    margin-top: 0px;
+  }
+  .metric-history-chart {
+    float: right;
+  }
+}
+@media (max-width: 990px) {
+  .metrics-list {
+    float: left;
+    width: 180px;
+    margin-top: 0px;
+  }
+  .metric-history-chart {
+    float: right;
+  }
+}

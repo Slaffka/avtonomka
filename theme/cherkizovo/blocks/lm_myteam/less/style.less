@@ -1,0 +1,654 @@
+@import "../../../less/variables.less";
+
+.pagelayout-grid #page-content .block-region{
+  padding: 0;
+}
+.pagelayout-grid .gridcol1 .block.block_lm_myteam{
+  width: 100%;
+  height: auto;
+}
+
+
+
+.pagelayout-grid .block.block_lm_myteam{
+  border:none;
+}
+.block_lm_myteam .title h2{
+  display: none;
+}
+
+.block.block_lm_myteam .content{
+  display: block;
+  margin:0;
+}
+
+.block_lm_myteam.block{
+  background-color: transparent;
+}
+.block_lm_myteam table {
+
+}
+/* Sub nav */
+.block_lm_myteam .lm-subnav li a{
+  color:@black;
+}
+.block_lm_myteam .lm-subnav li.current{
+  padding: 0 15px;
+}
+
+/* индивидуальные стили таблицы */
+
+.table-myteam th:first-child{
+  border-right: 1px solid @borderRight;
+}
+
+.table-myteam thead th:last-child{
+  border-right: none;
+}
+
+
+.table-myteam td:first-child{
+  border-left:none;
+  text-align: left;
+}
+.pagelayout-grid .table-myteam td:first-child{
+  text-align: center;
+}
+
+.table-myteam tr:last-child td{
+  border-bottom:none;
+}
+
+/*.table-rating td:nth-child(7){
+  border-right: 1px solid @borderRight;
+}*/
+
+.table-rating tbody td span{
+  float: left;
+}
+.table-rating tbody td div{
+  float: right;
+  margin: 7px 14px 0 10px;
+}
+.table-rating th:last-child,
+.table-kpi th:last-child{
+  border-left: none;
+}
+/* end индивидуальные стили таблицы */
+
+/* графики для рейтингов */
+
+#myteam-rating-diagram {
+  overflow: hidden;
+}
+#myteam-rating-diagrams {
+  clear: both;
+  margin-top: 65px;
+}
+
+
+.my-rating-results {
+  text-align: center;
+  font-size: @secondFont;
+  margin: 0;
+}
+.rating-result{
+  display: inline-block;
+  color: @mainColor;
+  margin: 0 6px;
+}
+
+#myteam-rating-diagram .myteam-user-diagram {
+  max-width: 1000px;
+  min-width: 500px;
+  margin: 10px auto 30px;
+}
+#myteam-rating-diagram .myteam-user-diagram .my-rating-results {
+  font-size: 22px;
+}
+#myteam-rating-diagram .myteam-user-diagram .chart {
+  height: 400px;
+  margin-top: 25px;
+}
+#myteam-rating-diagram .myteam-user-diagram .user-name {
+  display: none;
+}
+
+#myteam-rating-diagrams .myteam-user-diagram {
+  float: left;
+  width: 45%;
+  margin-bottom: 50px;
+}
+#myteam-rating-diagrams .myteam-user-diagram .chart {
+  position: relative;
+  height: 150px;
+  margin-top: 25px;
+}
+#myteam-rating-diagrams .myteam-user-diagram text {
+  display: none;
+}
+#myteam-rating-diagrams .myteam-user-diagram .user-name {
+  text-align: center;
+}
+#myteam-rating-diagrams #user-diagram-total.myteam-user-diagram {
+  display: none;
+}
+
+.block .content .table-myteam .userpicture{
+  width: 40px;
+  height: 40px;
+}
+
+
+
+/*  kpi */
+.table-kpi td:first-child {
+  border-right: 1px solid @borderRight;
+}
+
+.table-kpi th:last-child{
+  border-right: none;
+}
+
+.table-kpi td
+{
+  border-right: 1px solid @borderRightTd
+}
+.table-kpi td.separator {
+  border-right: 1px solid @borderRight;
+}
+.table-kpi td.separator:last-child {
+  border-right: none;
+}
+.table-myteam.table-kpi tbody tr:first-child .separator{
+  padding: 18px 24px;
+}
+
+.table-myteam.table-kpi tbody tr:last-child {
+  background: @mainColor;
+  color: @white;
+  & td a {
+    color:@white;
+  }
+  & td {
+    padding: 18px;
+    border-right: 1px solid @blue;
+  }
+  & td:first-child {
+    text-align: center;
+  }
+  & td:last-child{
+    border-right: none;
+  }
+
+
+}
+
+
+
+
+
+
+
+
+/* kpi graphs */
+.myteam-user-diagram .metric-details {
+  overflow: hidden;
+}
+/* rating */
+
+
+.table-myteam.table-rating tbody tr:last-child {
+  background: @mainColor;
+  color: @white;
+  & td a {
+    color:@white;
+  }
+  & td {
+    padding: 18px;
+    border-left: 1px solid @blue;
+  }
+  & td:first-child {
+    text-align: center;
+    border-left: none;
+    border-right: 1px solid @blue;
+  }
+  & td:nth-child(2){
+    border-left: none;
+  }
+
+  & td:last-child{
+    border-right: none;
+  }
+
+
+}
+
+table.table-rating td{
+  border-right: none;
+  border-left: 1px solid @grey;
+                  &:nth-child(2){
+                    border-left:none;
+                  }
+
+}
+
+table.table-rating td.separator-left{
+  border-left: 1px solid @mainColor;
+}
+
+
+table.table-rating th:nth-child(2) {
+  border-right: none;
+}
+table.table-rating th:last-child{
+  border-left: 1px solid @mainColor;
+}
+.pagelayout-grid table.table-rating th:last-child{
+  border-left:none;
+}
+/*  table-practics*/
+
+
+
+.table-practics td:nth-child(10),
+
+.table-practics td:nth-child(13)
+{
+  border-right: 1px solid @borderRight;
+}
+.table-practics td:nth-child(7){
+  border-right: 1px solid @borderRightTd
+}
+
+.table-practics td:first-child{
+  border-right: 1px solid @borderRight;
+}
+
+.table-practics tr:first-child td:nth-child(4),
+.table-practics tr:first-child td:nth-child(5)
+{
+  border-right: 1px solid @borderRight;
+}
+/*  table-tutoring*/
+.table-myteam.table-tutoring td{
+  border-right: none;
+  border-left: 1px solid @grey;
+                &:first-of-type{
+                  border-left: none;
+                }
+                &:nth-of-type(2){
+                  border-left: none;
+                }
+
+}
+
+
+.table-myteam td:first-child{
+  border-right: 1px solid @borderRight;
+}
+
+.table-myteam.current-rating td:first-child{
+  border-right: 1px solid @borderRightTd;
+}
+
+
+.table-tutoring th:last-child,
+.table-tutoring td:last-child{
+  border-left: 1px solid @borderRight;
+}
+
+.table-tutoring.table-myteam th:nth-child(2){
+  border-right: none;
+}
+
+.table-myteam.table-tutoring tbody tr:last-child {
+  background: @mainColor;
+  color: @white;
+  & td {
+    padding: 18px;
+    border-left: 1px solid @blue;
+  }
+  & td:first-child {
+    text-align: center;
+    border-left: none;
+    border-right: 1px solid @blue;
+  }
+  & td:nth-child(2){
+    border-left: none;
+  }
+
+  & td:last-child{
+    border-right: none;
+  }
+
+
+}
+/*  end table-tutoring*/
+
+.rating-up {
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 10px solid @ratingUp;
+}
+
+.rating-down {
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 10px solid @ratingDown;
+}
+.rating-stop{
+  width: 15px;
+  height: 3px;
+  background: @ratingStop;
+  position: relative;
+  top: 3px;
+  left: 3px;
+}
+
+
+@media (min-width: 768px) {
+  .metric-details{
+    width: auto;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/*  Стили для печати */
+@media print{
+  .block_lm_myteam{
+    border:none;
+  }
+  .lm-subnav{
+    display: none;
+  }
+  .table-myteam{
+    border: 1px solid @black ;
+  }
+  .table-myteam thead th {
+    border: none;
+    border-left: 1px solid @black;
+  }
+  .table-myteam thead th:first-child {
+    border: none;
+  }
+
+  .table-myteam td{
+    border-bottom: 1px solid @black;
+    border-left: 1px solid @black;
+  }
+  .table-myteam td:first-child {
+    border-left: none;
+  }
+}
+
+#view-switcher {
+  position: absolute;
+  right: 0;
+  font-size: 28px;
+  opacity: 0.8;
+  background: @switcherBack;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  margin-top: 20px;
+}
+#view-switcher li {
+  padding: 10px 20px 10px 10px;
+  font-size: 28px;
+}
+#view-switcher li a {
+  color: @switcherColor;
+  opacity: 0.5;
+  text-decoration: none;
+}
+#view-switcher li.active a {
+  opacity: 1;
+}
+
+#lm_myteam-tutoring {
+  clear: both;
+
+}
+.graph-background{
+  background: @blockColor;
+  border-radius: 5px;
+
+}
+
+#myteam-user-list {
+  float: left;
+  margin: 0px 15px 30px 0;
+}
+
+
+#myteam-user-list .myteam-user {
+  font-size: 16px;
+  width: 230px;
+  margin: 20px 0;
+  padding: 4px 10px;
+  border: solid 1px transparent;
+  text-align: left;
+  line-height: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+#myteam-user-list .myteam-user img {
+  margin: -50% 0;
+  width: 40px;
+  height: 40px;
+}
+#myteam-user-list .myteam-user a {
+  color: @mainColor;
+  position: absolute;
+}
+#myteam-user-list .myteam-user a.myteam-user-name {
+  left: 75px;
+}
+#myteam-user-list .myteam-user.selected {
+  background: @mainColor;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+#myteam-user-list .myteam-user.selected a {
+  color: @white;
+}
+#myteam-user-list hr {
+  border-color: @userHr;
+  width: 180px;
+  margin: 10px 10px;
+  border-bottom: none;
+}
+
+#myteam-user-list .list-total{
+  margin-top: 0px;
+  padding: 4px 0 4px 55px;
+  width: 195px;
+}
+
+/* Графическая сводная таблица (Волна) */
+.myteam-user-diagram .chart-wave-value {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+#myteam-tutoring-diagram {
+  overflow: hidden;
+}
+#myteam-tutoring-diagram .myteam-user-diagram {
+  max-width: 700px;
+  min-width: 300px;
+  margin: 0 auto;
+}
+#myteam-tutoring-diagram .myteam-user-diagram .chart{
+  height: 400px;
+}
+#myteam-tutoring-diagram .myteam-user-diagram .user-name {
+  display: none;
+}
+#myteam-tutoring-diagram .myteam-user-diagram .myteam-user-diagram-value {
+  background: @blue;
+  color: @white;
+  font-weight: bold;
+  padding: 5px;
+  box-sizing: border-box;
+  margin: 0 0 3px 0;
+  white-space: nowrap;
+  text-shadow: 1px 1px 1px #333, 0 -1px 1px #999;
+}
+
+#myteam-tutoring-diagrams {
+  clear: both;
+  margin: 30px 0 0 0;
+}
+#myteam-tutoring-diagrams .myteam-user-diagram {
+  float: left;
+  overflow: hidden;
+}
+#myteam-tutoring-diagrams .myteam-user-diagram .chart-wave-label {
+  display: none;
+}
+#myteam-tutoring-diagrams .myteam-user-diagram .user-name {
+  padding-left: 10px;
+}
+#myteam-tutoring-diagrams #user-diagram-total.myteam-user-diagram {
+  display: none;
+}
+
+/* стили для подробной страницы ошибок */
+#myteam-mistakes {
+  text-align: left;
+  clear: both;
+}
+
+#myteam-mistakes h1 {
+  font-size: @mainFont;
+  padding: 8px;
+}
+
+#myteam-mistakes-diagrams {
+  overflow: hidden;
+}
+
+#myteam-mistakes-diagrams .myteam-user-diagram {
+  display: none;
+  position: relative;
+  max-width: 800px;
+  height: 400px;
+  margin: 0 auto;
+}
+#myteam-mistakes-diagrams .myteam-user-diagram.open {
+  display: block;
+}
+#myteam-tutoring-diagrams .myteam-user-diagram .myteam-user-diagram-value,
+#myteam-mistakes-diagrams .myteam-user-diagram .myteam-user-diagram-value {
+  background: @blue;
+  color: @white;
+  font-weight: bold;
+  padding: 5px;
+  box-sizing: border-box;
+  margin: 0 0 3px 0;
+  white-space: nowrap;
+  text-shadow: 1px 1px 1px #333, 0 -1px 1px #999;
+}
+
+/* стили для статистики курса (диалоговое окошко при нажатии на курс) */
+.modal.lm_myteam_course_statistic {
+  color: @mainColor;
+  border-right: 6px;
+  left: 50%;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+                 & table tbody{
+                   background: @white;
+                 }
+                 & tfoot tr:last-child th:first-child{
+                   -webkit-border-bottom-left-radius: 5px;
+                   -moz-border-radius-bottomleft: 5px;
+                   border-bottom-left-radius: 5px;
+                 }
+                & tfoot tr:last-child td:last-child{
+                  -webkit-border-bottom-right-radius: 5px;
+                  -moz-border-radius-bottomright: 5px;
+                  border-bottom-right-radius: 5px;
+                }
+}
+.modal.lm_myteam_course_statistic .modal-header .close {
+  color: @mainColor;
+}
+
+
+.modal.lm_myteam_course_statistic table {
+  width: 100%;
+}
+.modal.lm_myteam_course_statistic table thead th {
+  text-align: center;
+}
+
+
+
+.modal.lm_myteam_course_statistic td.member a {
+  color: @mainColor;
+}
+.modal.lm_myteam_course_statistic td.value {
+  text-align: center;
+}
+
+.modal.lm_myteam_course_statistic a.course-errors {
+  color: @mainColor;
+}
+
+@media (min-width: 960px) {
+  #myteam-tutoring-diagram .myteam-user-diagram{
+    .chart {
+      height: 280px;
+    }
+  }
+  #myteam-rating-diagram .myteam-user-diagram .chart {
+    height: 210px;
+  }
+
+  #myteam-rating-diagrams {
+    margin-top: 0;
+  }
+
+  #myteam-rating-diagrams .myteam-user-diagram .chart {
+    height: 90px;
+    margin-top: 5px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #myteam-tutoring-diagram .myteam-user-diagram .chart {
+    height: 400px;
+  }
+  #myteam-rating-diagram .myteam-user-diagram .chart {
+    height: 400px;
+  }
+
+  #myteam-rating-diagrams {
+    margin-top: 65px;
+  }
+
+  #myteam-rating-diagrams .myteam-user-diagram .chart {
+    height: 150px;
+    margin-top: 15px;
+  }
+}
