@@ -291,6 +291,9 @@ if (!empty($instanceid) && !empty($roleid)) {
 
         $params['edulevel'] = core\event\base::LEVEL_PARTICIPATING;
         $params['contextlevel'] = CONTEXT_MODULE;
+/*        var_dump($relatedctxsql);
+        var_dump($params);
+        var_dump($crudsql);*/
 
         if ($twhere) {
             $sql .= ' WHERE '.$twhere; // Initial bar.

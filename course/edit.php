@@ -200,5 +200,9 @@ echo $OUTPUT->header();
 echo $OUTPUT->heading($pagedesc);
 
 $editform->display();
-
+echo "<script>
+$(window).load(function(){
+$('#id_idnumber').val('');
+});
+</script>";
 echo $OUTPUT->footer();

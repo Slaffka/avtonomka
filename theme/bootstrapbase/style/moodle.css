@@ -3836,6 +3836,9 @@ img.iconsmall {
 .editing .section .activity .activityinstance {
   padding-right: 200px;
 }
+#page-mod-quiz-edit .editing .section .activity .activityinstance {
+  padding-right: 0;
+}
 .dir-rtl.editing .section .activity .contentwithoutlink,
 .dir-rtl.editing .section .activity .activityinstance {
   padding-left: 200px;
