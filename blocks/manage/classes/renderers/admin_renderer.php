@@ -56,6 +56,7 @@ class block_manage_admin_renderer extends block_manage_renderer
                 $items[] = (object) array('code'=>'rating', 'name'=>'Рейтинги', 'url'=>'/blocks/manage/?_p=lm_rating');
                 $items[] = (object) array('code'=>'rating', 'name'=>'Динамика монет', 'url'=>'/blocks/manage/?_p=lm_bank');
                 $items[] = (object) array('code'=>'rating', 'name'=>'Обращения', 'url'=>'/blocks/manage/?_p=lm_feedback');
+                $items[] = (object) array('code'=>'statistics', 'name'=>'Статистика', 'url'=>'/blocks/lm_report/');
                 $groups[] = (object) array('items'=>$items, 'name'=>'Сотрудники');
 
 

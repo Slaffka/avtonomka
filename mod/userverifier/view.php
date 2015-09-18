@@ -11,6 +11,8 @@ require('../../config.php');
 require_once("$CFG->dirroot/mod/userverifier/lib.php");
 require_once($CFG->libdir . '/completionlib.php');
 
+$PAGE->requires->js('/blocks/lm_report/js/statistics_include.js', true);
+
 $id       = optional_param('id', 0, PARAM_INT);        // Course module ID
 
 

@@ -18,6 +18,7 @@ class block_manage_courseplayer_renderer extends block_manage_renderer{
             die();
         }
 
+
         if( !$course = lm_course::i($this->courseid) ){
             echo 'Курс не найден';
             die();
@@ -260,7 +261,7 @@ class block_manage_courseplayer_renderer extends block_manage_renderer{
             'popupoptions' => $scorm->options), true);
         $PAGE->requires->js('/mod/scorm/request.js', true);
         $PAGE->requires->js('/lib/cookies.js', true);
-
+        $PAGE->requires->js('/blocks/lm_report/js/statistics_include.js', true);
         if (file_exists($CFG->dirroot.'/mod/scorm/datamodels/'.$scorm->version.'.js')) {
             $PAGE->requires->js('/mod/scorm/datamodels/'.$scorm->version.'.js', true);
         } else {

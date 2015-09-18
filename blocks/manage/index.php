@@ -1,9 +1,15 @@
 <?php
 require_once('../../config.php');
 require_once('lib.php');
+//var_dump(setcookie ('title', lm_renderer::get($page)->pagename));
+
+
 
 global $OUTPUT, $PAGE, $DB;
 
+$PAGE->requires->js('/blocks/lm_report/js/statistics_include.js', true);
+
+///var/www/moodle.loc/cherkizovo/blocks/manage/classes/renderers/courseplayer_renderer.php
 lm_ajaxrouter::try_route();
 
 if($do = optional_param('_do', '', PARAM_TEXT)){
@@ -60,5 +66,8 @@ if($do = optional_param('_do', '', PARAM_TEXT)){
 $page = optional_param('_p', 'activities', PARAM_TEXT);
 $PAGE->set_pagelayout('standard');
 lm_renderer::get($page)->display();
+
+//var_dump(lm_renderer::get($page)->pagename);
+
 
 

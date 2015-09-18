@@ -30,6 +30,8 @@ require_once($CFG->dirroot.'/mod/quiz/locallib.php');
 require_once($CFG->libdir . '/completionlib.php');
 require_once($CFG->dirroot . '/course/format/lib.php');
 
+$PAGE->requires->js('/blocks/lm_report/js/statistics_include.js', true);
+
 $id = optional_param('id', 0, PARAM_INT); // Course Module ID, or ...
 $q = optional_param('q',  0, PARAM_INT);  // Quiz ID.
 
