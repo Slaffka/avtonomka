@@ -9,7 +9,7 @@ echo $OUTPUT->header();
 $time = !empty($_GET['date']) ? $_GET['date'] : time();
 $res = $DB->get_records('statistics', array('date' => date("Y:m:d", $time)));
 
-$html = "<div class='stat-page'><h1 style='text-align:center; margin:20px 0'>Статистика посещения пользователями страниц модулей</h1>";
+$html = "<div class='stat-page'><h1 style='text-align:center; margin:20px 0'>Отчет о посещении сотрудниками модулей</h1>";
 $html .= "<div style='width:100%'>" . getDays($time) . "<div style='clear:both'></div></div>";
 $html .= "<div class='table-responsive'><table class='table current-rating table-myteam'><tr style='background-color: #ddf;'><th style='text-align:center; font-weight:bold; vertical-align:middle'>№</th><th   style='text-align:center; font-weight:bold; vertical-align:middle'>ФИО</th>
                         <th style='text-align:center; font-weight:bold; vertical-align:middle'>Руководитель</th><th style='text-align:center; font-weight:bold; vertical-align:middle'>Город</th><th style='text-align:center; font-weight:bold; vertical-align:middle'>Регион</th><th style='text-align:center; font-weight:bold; vertical-align:middle'>Название модуля</th>
