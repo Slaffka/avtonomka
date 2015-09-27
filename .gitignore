@@ -1,2 +1,4 @@
 .svn/
 svnignorelist.txt
+/nbproject/*
+config.php

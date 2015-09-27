@@ -12,6 +12,9 @@ if (isset($_GET['courseid']) && is_int($courseid = intval($_GET['courseid'])) &&
     $time = isset($_GET['time']) ? intval($_GET['time']) : 1;
     //$page = isset($_GET['_p']) ? $_GET['_p'] : 'courseplayer';
     $page = "Прохождение курса";
+    $tmp = $DB->get_record('course_modules', array('id' => $courseid));
+    var_dump($tmp);
+    $courseid = $DB->get_record('course', array('id' => $tmp->course))->fullname;
 // ищем есть ли запись по этому курсу за сегодня и если нет - создаем
     $res = $DB->get_record('statistics', array('userid' => $user, 'date' => $date, 'subpage' => $page, 'page' => $courseid));
     if ($res->id !== null) {
