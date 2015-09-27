@@ -7,9 +7,9 @@ $CFG = new stdClass();
 $CFG->dbtype    = 'mysqli';
 $CFG->dblibrary = 'native';
 $CFG->dbhost    = '127.0.0.1';
-$CFG->dbname    = 'cherkizovo';
-$CFG->dbuser    = 'root';//'cherkizovo';
-$CFG->dbpass    = 'password';//'cherkizovo';
+$CFG->dbname    = 'dev_moodle_pixy_pro';
+$CFG->dbuser    = 'moodle';//'cherkizovo';
+$CFG->dbpass    = '1N8r1U1o';//'cherkizovo';
 $CFG->prefix    = 'mdl_';
 $CFG->dboptions = array (
   'dbpersist' => 0,
@@ -17,7 +17,7 @@ $CFG->dboptions = array (
   'dbsocket' => '',
 );
 
-$CFG->wwwroot   = 'http://moodle.loc';//'http://192.168.0.101:2222';
+$CFG->wwwroot   = 'http://moodle.pixy.pro';//'http://192.168.0.101:2222';
 
 $CFG->dataroot  = __DIR__ . '/../moodledata';
 $CFG->admin     = 'admin';
