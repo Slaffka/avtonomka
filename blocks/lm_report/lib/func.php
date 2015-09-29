@@ -31,11 +31,14 @@ function getDays($time_today) {
     return $days;
 }
 
-function enterEmpty($data, $prop = 'name') {
+function enterEmpty($data, $prop = 'name',$link = false) {
     if ($data == null || $data == false) {
         return "---";
     } else {
-        return $data->$prop;
+        if (!$link)
+            return $data->$prop;
+        else
+            return "<a target='_blank' href='/blocks/manage/?_p=lm_personal&id=".  enterEmpty($data, 'id')."'>{$data->$prop}</a>";
     }
 }
 
