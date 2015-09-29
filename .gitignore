@@ -1,3 +1,7 @@
 .svn/
 svnignorelist.txt
+<<<<<<< HEAD
+=======
+/nbproject/*
+>>>>>>> 20c2b16fd66a41973a02cd17c94b4d0ccbd2982a
 config.php

@@ -810,34 +810,41 @@ class core_media_player_qt extends core_media_player {
         $fallback = core_media_player::PLACEHOLDER;
 
         // Embed code.
-        return <<<OET
-<span class="mediaplugin mediaplugin_qt">
-    <object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B"
-            codebase="http://www.apple.com/qtactivex/qtplugin.cab" $size>
-        <param name="pluginspage" value="http://www.apple.com/quicktime/download/" />
-        <param name="src" value="$url" />
-        <param name="controller" value="true" />
-        <param name="loop" value="false" />
-        <param name="autoplay" value="false" />
-        <param name="autostart" value="false" />
-        <param name="scale" value="aspect" />
-        <!--[if !IE]>-->
-        <object data="$url" type="$mimetype" $size>
-            <param name="src" value="$url" />
-            <param name="pluginurl" value="http://www.apple.com/quicktime/download/" />
-            <param name="controller" value="true" />
-            <param name="loop" value="false" />
-            <param name="autoplay" value="false" />
-            <param name="autostart" value="false" />
-            <param name="scale" value="aspect" />
-        <!--<![endif]-->
-            $fallback
-        <!--[if !IE]>-->
-        </object>
-        <!--<![endif]-->
-    </object>
-</span>
-OET;
+//         return <<<OET
+// <span class="mediaplugin mediaplugin_qt">
+//     <object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B"
+//             codebase="http://www.apple.com/qtactivex/qtplugin.cab" $size>
+//         <param name="pluginspage" value="http://www.apple.com/quicktime/download/" />
+//         <param name="src" value="$url" />
+//         <param name="controller" value="true" />
+//         <param name="loop" value="false" />
+//         <param name="autoplay" value="false" />
+//         <param name="autostart" value="false" />
+//         <param name="scale" value="aspect" />
+//         <!--[if !IE]>-->
+//         <object data="$url" type="$mimetype" $size>
+//             <param name="src" value="$url" />
+//             <param name="pluginurl" value="http://www.apple.com/quicktime/download/" />
+//             <param name="controller" value="true" />
+//             <param name="loop" value="false" />
+//             <param name="autoplay" value="false" />
+//             <param name="autostart" value="false" />
+//             <param name="scale" value="aspect" />
+//         <!--<![endif]-->
+//             $fallback
+//         <!--[if !IE]>-->
+//         </object>
+//         <!--<![endif]-->
+//     </object>
+// </span>
+// OET;
+        return '<link href="//vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
+<script src="//vjs.zencdn.net/4.12/video.js"></script>
+<video style="margin: 0 auto;" id="moodle_video" class="video-js vjs-default-skin"
+  controls preload="auto" ' . $size . '
+  data-setup=\'{"example_option":true}\'>
+ <source src="' . $url . '" type="' . $mimetype . '" />
+</video>';
     }
 
     public function get_supported_extensions() {
