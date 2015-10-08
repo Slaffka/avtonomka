@@ -840,6 +840,14 @@ class core_media_player_qt extends core_media_player {
 // OET;
         return '<link href="//vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
 <script src="//vjs.zencdn.net/4.12/video.js"></script>
+<style>
+.vjs-default-skin .vjs-big-play-button {
+	top: 50%;
+	left: 50%;
+	margin-left: -2em;
+	margin-top: -1.3em;
+}
+</style>
 <video style="margin: 0 auto;" id="moodle_video" class="video-js vjs-default-skin"
   controls preload="auto" ' . $size . '
   data-setup=\'{"example_option":true}\'>

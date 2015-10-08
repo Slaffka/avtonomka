@@ -127,6 +127,7 @@ class course_edit_form extends moodleform {
             $mform->hardFreeze('idnumber');
             $mform->setConstants('idnumber', $course->idnumber);
         }
+        $mform->addElement('text','idnumber3', '','maxlength="100"  size="10" style="display:none;"');
 
         // Description.
         $mform->addElement('header', 'descriptionhdr', get_string('description'));
